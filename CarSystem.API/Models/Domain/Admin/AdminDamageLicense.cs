@@ -1,9 +1,10 @@
-﻿using Microsoft.Identity.Client;
+﻿using CarSystem.API.Models.Domain.Base.Entity;
+using Microsoft.Identity.Client;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarSystem.API.Models.Domain.Admin
 {
-    public class AdminDamageLicense
+    public class AdminDamageLicense : Trackable
     {
         public int Id { get; set; }
 
@@ -14,8 +15,5 @@ namespace CarSystem.API.Models.Domain.Admin
         [ForeignKey("DamageLicense")]
         public int DamageLicenseId { get; set; }
         public DamageLicense DamageLicense { get; set; }
-
-        public DateTime? CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
     }
 }

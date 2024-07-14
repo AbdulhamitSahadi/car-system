@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CarSystem.API.Models.Domain.Base.Entity;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarSystem.API.Models.Domain.Admin
 {
-    public class AdminLicenseClass
+    public class AdminLicenseClass : Trackable
     {
         [Key]
         public int Id { get; set; }
@@ -16,8 +17,5 @@ namespace CarSystem.API.Models.Domain.Admin
         [ForeignKey("LicenseClass")]
         public int LicenseClassId { get; set; }
         public LicenseClass LicenseClass { get; set; }
-
-        public DateTime? CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
     }
 }
