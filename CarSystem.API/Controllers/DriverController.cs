@@ -98,7 +98,7 @@ namespace CarSystem.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ApiResponse>> Create([FromBody]CreateDriverDto createDriverDto)
         {
-            if(create)
+            
         }
     }
 }
