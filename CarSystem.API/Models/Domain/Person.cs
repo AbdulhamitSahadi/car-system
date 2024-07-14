@@ -1,10 +1,11 @@
 ﻿using CarSystem.API.Enums;
+using CarSystem.API.Models.Domain.Base.Entity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarSystem.API.Models.Domain
 {
-    public class Person
+    public class Person : DomainTrackable
     {
         [Key]
         public int Id { get; set; }
@@ -35,9 +36,9 @@ namespace CarSystem.API.Models.Domain
         [StringLength(200)]
         public string? Address { get; set; }
 
-        [Required]
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public DateTime? UpdatedAt { get; set; }
+        //[Required]
+        //public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        //public DateTime? UpdatedAt { get; set; }
 
         [Required]
         [ForeignKey("Nationality")]   

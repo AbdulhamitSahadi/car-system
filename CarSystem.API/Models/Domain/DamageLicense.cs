@@ -1,13 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CarSystem.API.Models.Domain.Base.Entity;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.Contracts;
 
 namespace CarSystem.API.Models.Domain
 {
-    public class DamageLicense
+    public class DamageLicense : DomainTrackable
     {
-        [Key]
-        public int Id { get; set; }
+        //[Key]
+        //public int Id { get; set; }
 
         [Required]
         [ForeignKey(nameof(License))]
@@ -35,8 +36,8 @@ namespace CarSystem.API.Models.Domain
         //public int AdminId { get; set; }
         //public Admin EditedBy { get; set; }
 
-        [Required]
-        public DateTime CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
+        //[Required]
+        //public DateTime CreatedAt { get; set; }
+        //public DateTime? UpdatedAt { get; set; }
     }
 }

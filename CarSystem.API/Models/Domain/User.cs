@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CarSystem.API.Models.Domain.Base.Entity;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarSystem.API.Models.Domain
 {
-    public class User
+    public class User : DomainTrackable
     {
         [Key]
         public int Id { get; set; }
@@ -20,9 +21,9 @@ namespace CarSystem.API.Models.Domain
         public int PersonId { get; set; }
         public Person Person { get; set; }
 
-        [Required]
-        public DateTime CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
+        //[Required]
+        //public DateTime CreatedAt { get; set; }
+        //public DateTime? UpdatedAt { get; set; }
 
         //[ForeignKey("EditedBy")]
         //public int? AdminId { get; set; }

@@ -1,14 +1,15 @@
 ﻿using CarSystem.API.Enums;
+using CarSystem.API.Models.Domain.Base.Entity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
 
 namespace CarSystem.API.Models.Domain
 {
-    public class LicenseClass
+    public class LicenseClass : DomainTrackable
     {
-        [Key]
-        public int Id { get; set; }
+        //[Key]
+        //public int Id { get; set; }
 
 
         [Required]
@@ -39,7 +40,7 @@ namespace CarSystem.API.Models.Domain
         //public int AdminId { get; set; }
         //public Admin EditedBy { get; set; }
 
-        public DateTime CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
+        //public DateTime CreatedAt { get; set; }
+        //public DateTime? UpdatedAt { get; set; }
     }
 }

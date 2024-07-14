@@ -1,11 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CarSystem.API.Models.Domain.Base.Entity;
+using System.ComponentModel.DataAnnotations;
 
 namespace CarSystem.API.Models.Domain
 {
-    public class TestCategory
+    public class TestCategory : DomainTrackable
     {
-        [Key]
-        public int Id { get; set; }
+        //[Key]
+        //public int Id { get; set; }
 
         [Required]
         [StringLength(100)]

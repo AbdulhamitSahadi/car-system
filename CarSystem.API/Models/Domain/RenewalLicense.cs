@@ -1,12 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CarSystem.API.Models.Domain.Base.Entity;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarSystem.API.Models.Domain
 {
-    public class RenewalLicense
+    public class RenewalLicense : DomainTrackable
     {
-        [Key]
-        public int Id { get; set; }
+        //[Key]
+        //public int Id { get; set; }
 
         [Required]
         [ForeignKey(nameof(License))]
@@ -29,9 +30,9 @@ namespace CarSystem.API.Models.Domain
         [StringLength(500)]
         public string? Notes { get; set; }
 
-        [Required]
-        public DateTime CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
+        //[Required]
+        //public DateTime CreatedAt { get; set; }
+        //public DateTime? UpdatedAt { get; set; }
 
         //[Required]
         //[ForeignKey("EditedBy")]

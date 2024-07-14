@@ -1,13 +1,14 @@
 ﻿using CarSystem.API.Enums;
+using CarSystem.API.Models.Domain.Base.Entity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarSystem.API.Models.Domain
 {
-    public class Admin
+    public class Admin : DomainTrackable
     {
-        [Key]
-        public int Id { get; set; }
+        //[Key]
+        //public int Id { get; set; }
 
         [Required]
         public AdminLevel AdminLevel { get; set; }
@@ -20,9 +21,9 @@ namespace CarSystem.API.Models.Domain
         [Required]
         public bool IsActive { get; set; }
 
-        [Required]
-        public DateTime CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
+        //[Required]
+        //public DateTime CreatedAt { get; set; }
+        //public DateTime? UpdatedAt { get; set; }
 
 
         //[ForeignKey("EditedBy")]

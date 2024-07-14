@@ -1,13 +1,14 @@
 ﻿using CarSystem.API.Enums;
+using CarSystem.API.Models.Domain.Base.Entity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarSystem.API.Models.Domain
 {
-    public class Application
+    public class Application : DomainTrackable
     {
-        [Key]
-        public int Id { get; set; }
+        //[Key]
+        //public int Id { get; set; }
 
         [Required]
         [ForeignKey(nameof(User))]    
@@ -32,9 +33,9 @@ namespace CarSystem.API.Models.Domain
         //public int AdminId { get; set; }
         //public Admin EditedBy { get; set; }
 
-        [Required]
-        public DateTime CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
+        //[Required]
+        //public DateTime CreatedAt { get; set; }
+        //public DateTime? UpdatedAt { get; set; }
 
         public ICollection<DamageLicense>? DamageLicenses { get; set; }
         public ICollection<License>? Licenses { get; set; }

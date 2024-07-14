@@ -1,13 +1,14 @@
 ﻿using CarSystem.API.Enums;
+using CarSystem.API.Models.Domain.Base.Entity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarSystem.API.Models.Domain
 {
-    public class WritingTest
+    public class WritingTest : DomainTrackable
     {
-        [Key]
-        public int Id { get; set; }
+        //[Key]
+        //public int Id { get; set; }
 
         //[Required]
         //[ForeignKey(nameof(Application))]
@@ -24,9 +25,9 @@ namespace CarSystem.API.Models.Domain
         public bool IsSuccess { get; set; }
 
 
-        [Required]
-        public DateTime CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
+        //[Required]
+        //public DateTime CreatedAt { get; set; }
+        //public DateTime? UpdatedAt { get; set; }
 
         //[Required]
         //[ForeignKey("EditedBy")]
