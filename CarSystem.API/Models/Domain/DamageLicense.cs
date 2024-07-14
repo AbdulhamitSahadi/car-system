@@ -1,11 +1,12 @@
-﻿using CarSystem.API.Models.Domain.Base.Entity;
+﻿using CarSystem.API.Models.Domain.AdminDomainModels;
+using CarSystem.API.Models.Domain.Base.Entity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.Contracts;
 
 namespace CarSystem.API.Models.Domain
 {
-    public class DamageLicense : DomainTrackable
+    public class DamageLicense : DomainTrackable<AdminDamageLicense>
     {
         //[Key]
         //public int Id { get; set; }

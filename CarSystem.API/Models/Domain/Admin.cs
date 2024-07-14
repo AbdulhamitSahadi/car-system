@@ -1,11 +1,12 @@
 ﻿using CarSystem.API.Enums;
+using CarSystem.API.Models.Domain.AdminDomainModels;
 using CarSystem.API.Models.Domain.Base.Entity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarSystem.API.Models.Domain
 {
-    public class Admin : DomainTrackable
+    public class Admin : DomainTrackable<AdminAdmin>
     {
         //[Key]
         //public int Id { get; set; }
@@ -30,22 +31,21 @@ namespace CarSystem.API.Models.Domain
         //public int? AdminId { get; set; }
         //public Admin? EditedBy { get; set; }
 
-
-        public ICollection<Admin>? Admins { get; set; }
-        public ICollection<Application>? Applications { get; set; }
-        public ICollection<DamageLicense>? DamageLicenses { get; set; }
-        public ICollection<Driver>? Drivers { get; set; }
-        public ICollection<License>? Licenses { get; set; }
-        public ICollection<LicenseClass>? LicenseClasses { get; set; }
-        public ICollection<LostLicense>? LostLicenses { get; set; }
-        public ICollection<Nationality>? Nationalities { get; set; }
-        public ICollection<Option>? Options { get; set; }
+        public ICollection<AdminApplication>? AdminsApplications { get; set; }
+        public ICollection<AdminDamageLicense>? AdminsDamageLicenses { get; set; }
+        public ICollection<AdminDriver>? AdminsDrivers { get; set; }
+        public ICollection<AdminLicense>? AdminsLicenses { get; set; }
+        public ICollection<AdminLicenseClass>? AdminsLicenseClasses { get; set; }
+        public ICollection<AdminLostLicense>? AdminsLostLicenses { get; set; }
+        public ICollection<AdminNationality>? AdminsNationalities { get; set; }
+        public ICollection<AdminOption>? AdminsOptions { get; set; }
         //public ICollection<Person>? People { get; set; }
-        public ICollection<Question>? Questions { get; set; }
-        public ICollection<RenewalLicense>? RenewalLicenses { get; set; }
-        public ICollection<Test>? Tests { get; set; }
-        public ICollection<WritingTest>? WrittenTests { get; set; }
-        public ICollection<User>? Users { get; set; }
+        public ICollection<AdminPerson>? AdminsPeople { get; set; }
+        public ICollection<AdminQuestion>? AdminsQuestions { get; set; }
+        public ICollection<AdminRenewalLicense>? AdminsRenewalLicenses { get; set; }
+        public ICollection<AdminTest>? AdminsTests { get; set; }
+        public ICollection<AdminWritingTest>? AdminsWritingTests { get; set; }
+        public ICollection<AdminVisionTest>? AdminsVisionTests { get; set; }
         
 
     }

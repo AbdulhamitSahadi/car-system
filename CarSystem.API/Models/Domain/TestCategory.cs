@@ -1,9 +1,10 @@
-﻿using CarSystem.API.Models.Domain.Base.Entity;
+﻿using CarSystem.API.Models.Domain.AdminDomainModels;
+using CarSystem.API.Models.Domain.Base.Entity;
 using System.ComponentModel.DataAnnotations;
 
 namespace CarSystem.API.Models.Domain
 {
-    public class TestCategory : DomainTrackable
+    public class TestCategory : DomainTrackable<AdminTestCategory>
     {
         //[Key]
         //public int Id { get; set; }

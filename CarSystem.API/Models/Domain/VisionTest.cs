@@ -1,11 +1,12 @@
-﻿using CarSystem.API.Models.Domain.Base.Entity;
+﻿using CarSystem.API.Models.Domain.AdminDomainModels;
+using CarSystem.API.Models.Domain.Base.Entity;
 using Microsoft.Identity.Client;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarSystem.API.Models.Domain
 {
-    public class VisionTest : DomainTrackable
+    public class VisionTest : DomainTrackable<AdminVisionTest>
     {
         //[Key]
         //public int Id { get; set; }

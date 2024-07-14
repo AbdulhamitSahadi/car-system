@@ -1,11 +1,12 @@
 ﻿using CarSystem.API.Enums;
+using CarSystem.API.Models.Domain.AdminDomainModels;
 using CarSystem.API.Models.Domain.Base.Entity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarSystem.API.Models.Domain
 {
-    public class Person : DomainTrackable
+    public class Person : DomainTrackable<AdminPerson>
     {
         [Key]
         public int Id { get; set; }
