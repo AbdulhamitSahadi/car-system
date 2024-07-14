@@ -14,8 +14,8 @@ namespace CarSystem.API.Models.Domain
 
         //[Required]
         //[ForeignKey("EditedBy")]
-        //public int AdminId { get; set; }
-        //public Admin EditedBy { get; set; }
+        //public int AdminId { get; set;  }
+        //public Admin EditedBy { get; set;  }
 
         [Required]
         public DateTime CreatedAt { get; set; }

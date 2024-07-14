@@ -25,9 +25,9 @@ namespace CarSystem.API.Models.Domain
         public DateTime? UpdatedAt { get; set; }
 
 
-        [ForeignKey("EditedBy")]
-        public int? AdminId { get; set; }
-        public Admin? EditedBy { get; set; }
+        //[ForeignKey("EditedBy")]
+        //public int? AdminId { get; set; }
+        //public Admin? EditedBy { get; set; }
 
 
         public ICollection<Admin>? Admins { get; set; }

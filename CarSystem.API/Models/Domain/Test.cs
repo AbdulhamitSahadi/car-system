@@ -30,10 +30,10 @@ namespace CarSystem.API.Models.Domain
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
 
-        [Required]
-        [ForeignKey("EditedBy")]
-        public int AdminId { get; set; }
-        public Admin EditedBy { get; set; }
+        //[Required]
+        //[ForeignKey("EditedBy")]
+        //public int AdminId { get; set; }
+        //public Admin EditedBy { get; set; }
 
         [Required]
         [ForeignKey("TestCategoryId")]

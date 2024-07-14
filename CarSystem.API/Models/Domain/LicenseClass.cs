@@ -34,10 +34,10 @@ namespace CarSystem.API.Models.Domain
         [StringLength(200)]
         public string? Notes { get; set; }
 
-        [Required]
-        [ForeignKey("EditedBy")]
-        public int AdminId { get; set; }
-        public Admin EditedBy { get; set; }
+        //[Required]
+        //[ForeignKey("EditedBy")]
+        //public int AdminId { get; set; }
+        //public Admin EditedBy { get; set; }
 
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }

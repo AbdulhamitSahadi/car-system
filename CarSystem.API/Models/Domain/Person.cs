@@ -47,7 +47,7 @@ namespace CarSystem.API.Models.Domain
         //[Required]
         //[ForeignKey("CreatedBy")]
         //public int AdminId { get; set; }
-        //public Admin CreatedBy { get; set; }
+        //public Admin CreatedBy { get; set;  }
 
         [NotMapped]
         public string FullName

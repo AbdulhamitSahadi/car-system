@@ -27,10 +27,10 @@ namespace CarSystem.API.Models.Domain
         [Required]
         public LicenseClassType LicenseClassType { get; set; }
 
-        [Required]
-        [ForeignKey("EditedBy")]
-        public int AdminId { get; set; }
-        public Admin EditedBy { get; set; }
+        //[Required]
+        //[ForeignKey("EditedBy")]
+        //public int AdminId { get; set; }
+        //public Admin EditedBy { get; set; }
 
         [Required]
         public DateTime CreatedAt { get; set; }

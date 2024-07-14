@@ -18,5 +18,10 @@ namespace CarSystem.API.Models.Domain
         [Range(10, 100)]
 
         public int NumberOfQuestions { get; set; }
+
+        //[Required]
+        //[ForeignKey("EditedBy")]
+        //public int AdminId { get; set; }
+        //public Admin EditedBy { get; set; }
     }
 }

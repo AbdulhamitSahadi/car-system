@@ -16,10 +16,10 @@ namespace CarSystem.API.Models.Domain
         public int UserId { get; set; }
         public User User { get; set; }
 
-        [Required]  
-        [ForeignKey("EditedBy")]
-        public int AdminId { get; set; }
-        public Admin EditedBy { get; set; }
+        //[Required]  
+        //[ForeignKey("EditedBy")]
+        //public int AdminId { get; set; }
+        //public Admin EditedBy { get; set; }
 
         [Required]
         public DateTime CreatedAt { get; set; }
