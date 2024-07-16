@@ -31,5 +31,8 @@ namespace CarSystem.API.Models.Domain
         //public Admin? EditedBy { get; set; }
 
         public ICollection<Application> Applications { get; set; }
+
+
+        public ICollection<UserPermission> UserPermissions { get; set; }
     }
 }

@@ -12,11 +12,13 @@ namespace CarSystem.API.Models.Domain.AdminDomainModels.Base.Entity
         [ForeignKey("Admin")]
         public int AdminId { get; set; }
         public Admin Admin { get; set; }
-        public DateTime? CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
 
         [ForeignKey(nameof(Entity))]
         public TKey EntityId { get; set; }
         public TEntity Entity { get; set; }
+
+
+        public DateTime? CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
     }
 }
