@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using CarSystem.API.Models;
 using CarSystem.API.Models.Domain;
-using CarSystem.API.Models.DTOs.NationalityDTOs;
 using CarSystem.API.Repositories.IRepositories;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;

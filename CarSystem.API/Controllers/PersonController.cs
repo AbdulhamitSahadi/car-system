@@ -1,10 +1,6 @@
 ﻿using AutoMapper;
 using CarSystem.API.Models;
 using CarSystem.API.Models.Domain;
-using CarSystem.API.Models.DTOs.PersonDTOs;
-using CarSystem.API.Models.DTOs.User.CreateDTOs.PersonDTOs;
-using CarSystem.API.Models.DTOs.User.ReadDTOs.PersonDTOs;
-using CarSystem.API.Models.DTOs.User.UpdateDTOs.PersonDTOs;
 using CarSystem.API.Repositories.IRepositories;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
