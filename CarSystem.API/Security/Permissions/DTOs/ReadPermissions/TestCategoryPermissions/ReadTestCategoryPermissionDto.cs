@@ -1,4 +1,4 @@
-﻿namespace CarSystem.API.Models.DTOs.TestCategoryDTOs
+﻿namespace CarSystem.API.Security.Permissions.DTOs.ReadPermissions.TestCategoryPermissions
 {
     public class ReadTestCategoryPermissionDto
     {

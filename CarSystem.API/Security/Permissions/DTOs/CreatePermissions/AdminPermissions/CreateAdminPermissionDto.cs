@@ -1,8 +1,7 @@
 ﻿using CarSystem.API.Enums;
-using CarSystem.API.Models.Domain;
 using System.ComponentModel.DataAnnotations;
 
-namespace CarSystem.API.Security.Permissions.DTOs.CreatePermissions.Admin
+namespace CarSystem.API.Security.Permissions.DTOs.CreatePermissions.Admin.AdminPermissions
 {
     public class CreateAdminPermissionDto
     {

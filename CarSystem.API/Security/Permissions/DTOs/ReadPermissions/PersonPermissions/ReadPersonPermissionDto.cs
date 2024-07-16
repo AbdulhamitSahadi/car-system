@@ -1,7 +1,7 @@
 ﻿using CarSystem.API.Enums;
 using CarSystem.API.Models.Domain;
 
-namespace CarSystem.API.Models.DTOs.PersonDTOs
+namespace CarSystem.API.Security.Permissions.DTOs.ReadPermissions.PersonPermissions
 {
     public class ReadPersonPermissionDto
     {

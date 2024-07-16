@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace CarSystem.API.Models.DTOs.AdminDTO.SuperAdminDTOs.TestSuperAdminDTOs
+﻿namespace CarSystem.API.Security.Permissions.DTOs.UpdatePermissions.TestPermissions
 {
     public class UpdateTestPermissionDto
     {

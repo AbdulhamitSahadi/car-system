@@ -1,8 +1,7 @@
 ﻿using CarSystem.API.Enums;
 using CarSystem.API.Models.Domain;
-using System.ComponentModel.DataAnnotations;
 
-namespace CarSystem.API.Models.DTOs.AdminDTO.SuperAdminDTOs.ApplicationAdminDTOs
+namespace CarSystem.API.Security.Permissions.DTOs.ReadPermissions.ApplicationPermissions
 {
     public class ReadApplicationPermissionDto
     {

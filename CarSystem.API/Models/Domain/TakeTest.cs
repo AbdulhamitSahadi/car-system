@@ -1,6 +1,5 @@
 ﻿using CarSystem.API.Models.Domain.AdminDomainModels;
 using CarSystem.API.Models.Domain.Base.Entity;
-using CarSystem.API.Models.Domain.Base.IEntity;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarSystem.API.Models.Domain

@@ -1,6 +1,4 @@
 ﻿using CarSystem.API.Enums;
-using Microsoft.Net.Http.Headers;
-using System.Runtime.CompilerServices;
 
 namespace CarSystem.API.Extensions
 {

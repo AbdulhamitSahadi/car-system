@@ -1,6 +1,4 @@
-﻿using Microsoft.Identity.Client;
-
-namespace CarSystem.API.Models.DTOs.LicenseClassDTOs
+﻿namespace CarSystem.API.Security.Permissions.DTOs.ReadPermissions.LicenseClassPermissions
 {
     public class ReadLicenseClassPermissionDto
     {

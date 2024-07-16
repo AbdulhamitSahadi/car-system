@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CarSystem.API.Models.DTOs.TestCategoryDTOs
+namespace CarSystem.API.Security.Permissions.DTOs.UpdatePermissions.TestCategoryPermissions
 {
     public class UpdateTestCategoryPermissionDto
     {

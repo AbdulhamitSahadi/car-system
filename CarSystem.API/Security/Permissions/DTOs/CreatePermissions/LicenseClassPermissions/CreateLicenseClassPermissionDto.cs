@@ -1,6 +1,6 @@
 ﻿using CarSystem.API.Enums;
 
-namespace CarSystem.API.Models.DTOs.AdminDTO.SuperAdminDTOs.LicenseClassSuperAdminDTOs
+namespace CarSystem.API.Security.Permissions.DTOs.CreatePermissions.LicenseClassPermissions
 {
     public class CreateLicenseClassPermissionDto
     {

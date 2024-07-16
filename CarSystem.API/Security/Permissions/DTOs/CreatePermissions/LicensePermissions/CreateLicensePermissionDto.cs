@@ -3,7 +3,7 @@ using CarSystem.API.Models.Domain;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace CarSystem.API.Security.Permissions.DTOs.CreatePermissions.License
+namespace CarSystem.API.Security.Permissions.DTOs.CreatePermissions.LicensePermissions
 {
     public class CreateLicensePermissionDto
     {

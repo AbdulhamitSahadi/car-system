@@ -1,4 +1,4 @@
-﻿namespace CarSystem.API.Models.DTOs.AdminDTO.SuperAdminDTOs.NationalitySuperAdminDTOs
+﻿namespace CarSystem.API.Security.Permissions.DTOs.UpdatePermissions.NationalityPermissions
 {
     public class UpdateNationalityPermissionDto
     {

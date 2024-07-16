@@ -1,6 +1,6 @@
 ﻿using CarSystem.API.Models.Domain;
 
-namespace CarSystem.API.Models.DTOs.AdminDTO.SuperAdminDTOs
+namespace CarSystem.API.Security.Permissions.DTOs.ReadPermissions.DamageLicensePermissions
 {
     public class ReadDamageLicensePermissionDto
     {

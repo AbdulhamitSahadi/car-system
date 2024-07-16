@@ -1,7 +1,6 @@
 ﻿using CarSystem.API.Models.Domain;
-using System.ComponentModel.DataAnnotations;
 
-namespace CarSystem.API.Models.DTOs.UserDTOs
+namespace CarSystem.API.Security.Permissions.DTOs.ReadPermissions.UserPermissions
 {
     public class ReadUserPermissionDto
     {

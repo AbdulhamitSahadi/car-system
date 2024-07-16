@@ -1,6 +1,6 @@
 ﻿using CarSystem.API.Models.Domain;
 
-namespace CarSystem.API.Models.DTOs.NationalityDTOs
+namespace CarSystem.API.Security.Permissions.DTOs.ReadPermissions.NationalityPermissions
 {
     public class ReadNationalityPermissionDto
     {

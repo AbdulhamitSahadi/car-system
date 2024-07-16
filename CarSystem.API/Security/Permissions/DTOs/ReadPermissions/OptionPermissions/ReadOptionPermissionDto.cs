@@ -1,6 +1,6 @@
 ﻿using CarSystem.API.Models.Domain;
 
-namespace CarSystem.API.Models.DTOs.AdminDTO.SuperAdminDTOs.OptionSuperAdminDTOs
+namespace CarSystem.API.Security.Permissions.DTOs.ReadPermissions.OptionPermissions
 {
     public class ReadOptionPermissionDto
     {

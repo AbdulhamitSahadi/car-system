@@ -1,34 +1,12 @@
 ﻿using AutoMapper;
 using CarSystem.API.Models.Domain;
-using CarSystem.API.Models.DTOs.AdminDTO.SuperAdminDTOs.AdminSuperAdminDTOs;
-using CarSystem.API.Models.DTOs.DriverDTOs;
 using CarSystem.API.Models.DTOs.LicenseClassDTOs;
-using CarSystem.API.Models.DTOs.LicenseDTOs;
 using CarSystem.API.Models.DTOs.LostLicenseDTOs;
 using CarSystem.API.Models.DTOs.NationalityDTOs;
-using CarSystem.API.Models.DTOs.NewFolder.LostLicenseDTOs;
-using CarSystem.API.Models.DTOs.NewFolder.RenewalLicenseDTOs;
-using CarSystem.API.Models.DTOs.NewFolder.TestDTOs;
-using CarSystem.API.Models.DTOs.NewFolder.UserDTOs;
-using CarSystem.API.Models.DTOs.OptionDTOs;
 using CarSystem.API.Models.DTOs.PersonDTOs;
-using CarSystem.API.Models.DTOs.QuestionDTOs;
 using CarSystem.API.Models.DTOs.RenewalLicenseDTOs;
 using CarSystem.API.Models.DTOs.TestCategoryDTOs;
-using CarSystem.API.Models.DTOs.User.CreateDTOs.PersonDTOs;
-using CarSystem.API.Models.DTOs.User.CreateDTOs.RenewalLicenseDTOs;
-using CarSystem.API.Models.DTOs.User.CreateDTOs.UserDTOs;
-using CarSystem.API.Models.DTOs.User.ReadDTOs.LostLicenseDTOs;
-using CarSystem.API.Models.DTOs.User.ReadDTOs.PersonDTOs;
-using CarSystem.API.Models.DTOs.User.ReadDTOs.RenewalLicenseDTOs;
-using CarSystem.API.Models.DTOs.User.ReadDTOs.TestDTOs;
-using CarSystem.API.Models.DTOs.User.ReadDTOs.UserDTOs;
-using CarSystem.API.Models.DTOs.User.UpdateDTOs.PersonDTOs;
-using CarSystem.API.Models.DTOs.User.UpdateDTOs.TestDTOs;
-using CarSystem.API.Models.DTOs.User.UpdateDTOs.UserDTOs;
 using CarSystem.API.Models.DTOs.UserDTOs;
-using CarSystem.API.Models.DTOs.VisionTestDTOs;
-using CarSystem.API.Models.DTOs.WritingTestDTOs;
 
 namespace CarSystem.API.Models.Mappers
 {

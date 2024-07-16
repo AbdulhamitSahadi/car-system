@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CarSystem.API.Models.DTOs.AdminDTO.SuperAdminDTOs.VisionTestSuperAdminDTOs
+namespace CarSystem.API.Security.Permissions.DTOs.ReadPermissions.VisionTestPermissions
 {
     public class ReadVisionTestPermissionDto
     {

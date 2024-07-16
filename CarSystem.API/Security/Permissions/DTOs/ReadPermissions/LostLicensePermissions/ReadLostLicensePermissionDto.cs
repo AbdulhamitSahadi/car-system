@@ -1,6 +1,6 @@
 ﻿using CarSystem.API.Models.Domain;
 
-namespace CarSystem.API.Models.DTOs.LostLicenseDTOs
+namespace CarSystem.API.Security.Permissions.DTOs.ReadPermissions.LostLicensePermissions
 {
     public class ReadLostLicensePermissionDto
     {

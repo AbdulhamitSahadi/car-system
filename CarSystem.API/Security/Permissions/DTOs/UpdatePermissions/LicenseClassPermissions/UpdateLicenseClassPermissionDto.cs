@@ -1,4 +1,4 @@
-﻿namespace CarSystem.API.Models.DTOs.AdminDTO.SuperAdminDTOs.LicenseClassSuperAdminDTOs
+﻿namespace CarSystem.API.Security.Permissions.DTOs.UpdatePermissions.LicenseClassPermissions
 {
     public class UpdateLicenseClassPermissionDto
     {

@@ -1,5 +1,4 @@
-﻿using CarSystem.API.Enums;
-namespace CarSystem.API.Security.Permissions.DTOs.UpdatePermissions.UserPermissions
+﻿namespace CarSystem.API.Security.Permissions.DTOs.UpdatePermissions.UserPermissions
 {
     public class UpdateUserIsActivePermissionDto
     {

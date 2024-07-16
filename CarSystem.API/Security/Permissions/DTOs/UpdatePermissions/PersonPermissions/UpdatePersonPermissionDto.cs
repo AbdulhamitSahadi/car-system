@@ -1,7 +1,7 @@
 ﻿using CarSystem.API.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace CarSystem.API.Models.DTOs.PersonDTOs
+namespace CarSystem.API.Security.Permissions.DTOs.UpdatePermissions.PersonPermissions
 {
     public class UpdatePersonPermissionDto
     {

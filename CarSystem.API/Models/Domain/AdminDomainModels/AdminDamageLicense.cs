@@ -1,7 +1,4 @@
 ﻿using CarSystem.API.Models.Domain.AdminDomainModels.Base.Entity;
-using CarSystem.API.Models.Domain.Base.Entity;
-using Microsoft.Identity.Client;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarSystem.API.Models.Domain.AdminDomainModels
 {

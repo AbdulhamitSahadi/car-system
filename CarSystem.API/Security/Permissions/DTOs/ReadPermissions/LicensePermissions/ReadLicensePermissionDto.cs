@@ -3,7 +3,7 @@ using CarSystem.API.Models.Domain;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace CarSystem.API.Models.DTOs.AdminDTO.SuperAdminDTOs.LicenseSuperAdminDTOs
+namespace CarSystem.API.Security.Permissions.DTOs.ReadPermissions.LicensePermissions
 {
     public class ReadLicensePermissionDto
     {
