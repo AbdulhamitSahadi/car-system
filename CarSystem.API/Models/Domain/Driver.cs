@@ -28,6 +28,6 @@ namespace CarSystem.API.Models.Domain
         //public DateTime? UpdatedAt { get; set; }
 
 
-        public ICollection<License> OwnedLicenses { get; set; }
+        public ICollection<License> OwnedLicenses { get; set; } 
     }
 }

@@ -1,4 +1,5 @@
-﻿using CarSystem.API.Models.Domain.Base.IEntity;
+﻿using CarSystem.API.Enums;
+using CarSystem.API.Models.Domain.Base.IEntity;
 using System.ComponentModel.DataAnnotations;
 
 namespace CarSystem.API.Models.Domain.Base.Entity
@@ -11,5 +12,7 @@ namespace CarSystem.API.Models.Domain.Base.Entity
         public DateTime? CreatedAt { get; set; }
 
         public ICollection<TEntity>? Admins_Entities { get; set; }
+
+        public Status Status { get; set; }
     }
 }

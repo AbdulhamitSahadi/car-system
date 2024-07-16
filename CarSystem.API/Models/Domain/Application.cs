@@ -8,6 +8,10 @@ namespace CarSystem.API.Models.Domain
 {
     public class Application : DomainTrackable<AdminApplication>
     {
+
+
+        //User rol
+
         //[Key]
         //public int Id { get; set; }
 
@@ -21,7 +25,7 @@ namespace CarSystem.API.Models.Domain
         //public License License { get; set; }
 
         [Required]
-        public ApplicationStatus Status { get; set; }
+        public Status Status { get; set; }
 
         [Required]
         public ApplicationType Type { get; set; }
@@ -38,6 +42,9 @@ namespace CarSystem.API.Models.Domain
         //public DateTime CreatedAt { get; set; }
         //public DateTime? UpdatedAt { get; set; }
 
+
+
+        //Admin Role
         public ICollection<DamageLicense>? DamageLicenses { get; set; }
         public ICollection<License>? Licenses { get; set; }
         public ICollection<LostLicense>? LostLicenses { get; set; }

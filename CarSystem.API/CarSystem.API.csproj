@@ -19,6 +19,33 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Models\DTOs\User\UpdateDTOs\TakeTestDTOs\" />
+    <Folder Include="Security\Permissions\Actions\DeletePermissions\Admin\" />
+    <Folder Include="Security\Permissions\Actions\DeletePermissions\Application\" />
+    <Folder Include="Security\Permissions\Actions\DeletePermissions\DamageLicense\" />
+    <Folder Include="Security\Permissions\Actions\DeletePermissions\Driver\" />
+    <Folder Include="Security\Permissions\Actions\DeletePermissions\LicenseClass\" />
+    <Folder Include="Security\Permissions\Actions\DeletePermissions\License\" />
+    <Folder Include="Security\Permissions\Actions\DeletePermissions\LostLicense\" />
+    <Folder Include="Security\Permissions\Actions\DeletePermissions\Nationality\" />
+    <Folder Include="Security\Permissions\Actions\DeletePermissions\Option\" />
+    <Folder Include="Security\Permissions\Actions\DeletePermissions\Person\" />
+    <Folder Include="Security\Permissions\Actions\DeletePermissions\Question\" />
+    <Folder Include="Security\Permissions\Actions\DeletePermissions\RenewalLicense\" />
+    <Folder Include="Security\Permissions\Actions\DeletePermissions\TakeTest\" />
+    <Folder Include="Security\Permissions\Actions\DeletePermissions\TestCategory\" />
+    <Folder Include="Security\Permissions\Actions\DeletePermissions\Test\" />
+    <Folder Include="Security\Permissions\Actions\DeletePermissions\User\" />
+    <Folder Include="Security\Permissions\Actions\DeletePermissions\VisionTest\" />
+    <Folder Include="Security\Permissions\Actions\DeletePermissions\WritingTest\" />
+    <Folder Include="Security\Permissions\DTOs\CreatePermissions\ApplicationPermissions\" />
+    <Folder Include="Security\Permissions\DTOs\CreatePermissions\DamageLicensePermissions\" />
+    <Folder Include="Security\Permissions\DTOs\CreatePermissions\LostLicensePermissions\" />
+    <Folder Include="Security\Permissions\DTOs\CreatePermissions\TestPermissions\" />
+    <Folder Include="Security\Permissions\DTOs\CreatePermissions\UserPermissions\" />
+    <Folder Include="Security\Permissions\DTOs\CreatePermissions\TakeTestPermissions\" />
+    <Folder Include="Security\Permissions\DTOs\CreatePermissions\RenewalLicense\" />
+    <Folder Include="Security\Permissions\DTOs\CreatePermissions\PersonPermissions\" />
   </ItemGroup>
 
 </Project>

@@ -1,19 +1,31 @@
 ﻿using AutoMapper;
 using CarSystem.API.Models.Domain;
-using CarSystem.API.Models.DTOs.AdminDTOs;
-using CarSystem.API.Models.DTOs.ApplicationDTOs;
-using CarSystem.API.Models.DTOs.DamageLicenseDTOs;
+using CarSystem.API.Models.DTOs.AdminDTO.SuperAdminDTOs.AdminSuperAdminDTOs;
 using CarSystem.API.Models.DTOs.DriverDTOs;
 using CarSystem.API.Models.DTOs.LicenseClassDTOs;
 using CarSystem.API.Models.DTOs.LicenseDTOs;
 using CarSystem.API.Models.DTOs.LostLicenseDTOs;
 using CarSystem.API.Models.DTOs.NationalityDTOs;
+using CarSystem.API.Models.DTOs.NewFolder.LostLicenseDTOs;
+using CarSystem.API.Models.DTOs.NewFolder.RenewalLicenseDTOs;
+using CarSystem.API.Models.DTOs.NewFolder.TestDTOs;
+using CarSystem.API.Models.DTOs.NewFolder.UserDTOs;
 using CarSystem.API.Models.DTOs.OptionDTOs;
 using CarSystem.API.Models.DTOs.PersonDTOs;
 using CarSystem.API.Models.DTOs.QuestionDTOs;
 using CarSystem.API.Models.DTOs.RenewalLicenseDTOs;
 using CarSystem.API.Models.DTOs.TestCategoryDTOs;
-using CarSystem.API.Models.DTOs.TestDTOs;
+using CarSystem.API.Models.DTOs.User.CreateDTOs.PersonDTOs;
+using CarSystem.API.Models.DTOs.User.CreateDTOs.RenewalLicenseDTOs;
+using CarSystem.API.Models.DTOs.User.CreateDTOs.UserDTOs;
+using CarSystem.API.Models.DTOs.User.ReadDTOs.LostLicenseDTOs;
+using CarSystem.API.Models.DTOs.User.ReadDTOs.PersonDTOs;
+using CarSystem.API.Models.DTOs.User.ReadDTOs.RenewalLicenseDTOs;
+using CarSystem.API.Models.DTOs.User.ReadDTOs.TestDTOs;
+using CarSystem.API.Models.DTOs.User.ReadDTOs.UserDTOs;
+using CarSystem.API.Models.DTOs.User.UpdateDTOs.PersonDTOs;
+using CarSystem.API.Models.DTOs.User.UpdateDTOs.TestDTOs;
+using CarSystem.API.Models.DTOs.User.UpdateDTOs.UserDTOs;
 using CarSystem.API.Models.DTOs.UserDTOs;
 using CarSystem.API.Models.DTOs.VisionTestDTOs;
 using CarSystem.API.Models.DTOs.WritingTestDTOs;
@@ -46,23 +58,23 @@ namespace CarSystem.API.Models.Mappers
 
             CreateMap<CreateLicenseClassDto, LicenseClass>().ReverseMap();
             CreateMap<UpdateLicenseClassDto, LicenseClass>().ReverseMap();
-            CreateMap<LicenseClassDto, LicenseClass>().ReverseMap();
+            CreateMap<ReadLicenseClassPermissionDto, LicenseClass>().ReverseMap();
 
             CreateMap<CreateLostLicenseDto, LostLicense>().ReverseMap();
             CreateMap<UpdateLostLicenseDto, LostLicense>().ReverseMap();
-            CreateMap<LostLicenseDto, LostLicense>().ReverseMap();
+            CreateMap<ReadLostLicensePermissionDto, LostLicense>().ReverseMap();
 
             CreateMap<CreateNationalityDto, Nationality>().ReverseMap();
             CreateMap<UpdateNationalityDto, Nationality>().ReverseMap();
-            CreateMap<NationalityDto, Nationality>().ReverseMap();
+            CreateMap<ReadNationalityPermissionDto, Nationality>().ReverseMap();
 
             CreateMap<CreateOptionDto, Option>().ReverseMap();
             CreateMap<UpdateOptionDto, Option>().ReverseMap();
             CreateMap<OptionDto, Option>().ReverseMap();
 
             CreateMap<CreatePersonDto, Person>().ReverseMap();
-            CreateMap<UpdatePersonDto, Person>().ReverseMap();
-            CreateMap<PersonDto, Person>().ReverseMap();
+            CreateMap<UpdatePersonPermissionDto, Person>().ReverseMap();
+            CreateMap<ReadPersonPermissionDto, Person>().ReverseMap();
 
             CreateMap<CreateQuestionDto, Question>().ReverseMap();
             CreateMap<UpdateQuestionDto, Question>().ReverseMap();  
@@ -70,19 +82,19 @@ namespace CarSystem.API.Models.Mappers
 
             CreateMap<CreateRenewalLicenseDto, RenewalLicense>().ReverseMap();
             CreateMap<UpdateRenewalLicenseDto, RenewalLicense>().ReverseMap();
-            CreateMap<RenewalLicenseDto, RenewalLicense>().ReverseMap();
+            CreateMap<ReadRenewalLicensePermissionDto, RenewalLicense>().ReverseMap();
 
             CreateMap<CreateTestDto, Test>().ReverseMap();
             CreateMap<UpdateTestDto, Test>().ReverseMap();
-            CreateMap<TestDto, Test>().ReverseMap();
+            CreateMap<ReadTestDto, Test>().ReverseMap();
 
-            CreateMap<CreateTestCategoryDto, TestCategory>().ReverseMap();
-            CreateMap<UpdateTestCategoryDto, TestCategory>().ReverseMap();
-            CreateMap<TestCategoryDto, TestCategory>().ReverseMap();
+            CreateMap<CreateTestCategory, TestCategory>().ReverseMap();
+            CreateMap<UpdateTestCategoryPermissionDto, TestCategory>().ReverseMap();
+            CreateMap<ReadTestCategoryPermissionDto, TestCategory>().ReverseMap();
 
             CreateMap<CreateUserDto, User>().ReverseMap();
             CreateMap<UpdateUserDto, User>().ReverseMap();
-            CreateMap<UserDto, User>().ReverseMap();
+            CreateMap<ReadUserPermissionDto, User>().ReverseMap();
 
             CreateMap<CreateVisionTestDto, VisionTest>().ReverseMap();
             CreateMap<UpdateVisionTestDto, VisionTest>().ReverseMap();

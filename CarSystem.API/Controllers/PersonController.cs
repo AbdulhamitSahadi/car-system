@@ -2,6 +2,9 @@
 using CarSystem.API.Models;
 using CarSystem.API.Models.Domain;
 using CarSystem.API.Models.DTOs.PersonDTOs;
+using CarSystem.API.Models.DTOs.User.CreateDTOs.PersonDTOs;
+using CarSystem.API.Models.DTOs.User.ReadDTOs.PersonDTOs;
+using CarSystem.API.Models.DTOs.User.UpdateDTOs.PersonDTOs;
 using CarSystem.API.Repositories.IRepositories;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -78,7 +81,7 @@ namespace CarSystem.API.Controllers
                 return BadRequest(_response);
             }
 
-            var personResponse = _mapper.Map<PersonDto>(person);
+            var personResponse = _mapper.Map<ReadPersonPermissionDto>(person);
 
             _response.IsSuccess = true;
             _response.ErrorMessages.Add(string.Empty);
@@ -170,7 +173,7 @@ namespace CarSystem.API.Controllers
         [Route("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<ApiResponse>> Update(int id, [FromBody] UpdatePersonDto updatePersonDto)
+        public async Task<ActionResult<ApiResponse>> Update(int id, [FromBody] UpdatePersonPermissionDto updatePersonDto)
         {
             if(id <= 0 || updatePersonDto.Id <= 0)
             {
@@ -244,7 +247,7 @@ namespace CarSystem.API.Controllers
             _response.IsSuccess = true;
             _response.StatusCode = HttpStatusCode.OK;
             _response.ErrorMessages.Add(string.Empty);
-            _response.Result = _mapper.Map<PersonDto>(existingPerson);
+            _response.Result = _mapper.Map<ReadPersonPermissionDto>(existingPerson);
 
             return Ok(_response);
         }

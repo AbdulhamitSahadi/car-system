@@ -47,22 +47,20 @@ namespace CarSystem.API.Extensions
                     return "Super Admin";
                 case AdminLevel.Admin:
                     return "Admin";
-                case AdminLevel.Moderator:
-                    return "Moderator";
             }
 
             return string.Empty;
         }
 
-        public static string ApplicationStatusToString(this ApplicationStatus applicationStatus)
+        public static string ApplicationStatusToString(this Status applicationStatus)
         {
             switch (applicationStatus)
             {
-                case ApplicationStatus.Approved:
+                case Status.Approved:
                     return "Approved";
-                case ApplicationStatus.Rejected:
+                case Status.Rejected:
                     return "Rejected";
-                case ApplicationStatus.Pending:
+                case Status.Pending:
                     return "Pending";
             }
 

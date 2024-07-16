@@ -7,8 +7,6 @@ namespace CarSystem.API.Models.Domain
 {
     public class Option : DomainTrackable<AdminOption>
     {
-        [Key]
-        public int Id { get; set; }
 
         [Required]
         [StringLength(300)]

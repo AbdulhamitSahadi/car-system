@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using CarSystem.API.Models;
-using CarSystem.API.Models.DTOs.DriverDTOs;
 using CarSystem.API.Repositories.IRepositories;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -98,7 +97,7 @@ namespace CarSystem.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ApiResponse>> Create([FromBody]CreateDriverDto createDriverDto)
         {
-            
+            throw new NotImplementedException();
         }
     }
 }

@@ -4,10 +4,7 @@ using CarSystem.API.Models.Domain;
 using CarSystem.API.Models.DTOs.NationalityDTOs;
 using CarSystem.API.Repositories.IRepositories;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging.Abstractions;
-using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using System.Net;
-using System.Runtime.InteropServices;
 
 namespace CarSystem.API.Controllers
 { 
@@ -43,7 +40,7 @@ namespace CarSystem.API.Controllers
                 return BadRequest(_response);
             }
 
-            var nationalitiesResponse = _mapper.Map<List<NationalityDto>>(nationalities);
+            var nationalitiesResponse = _mapper.Map<List<ReadNationalityPermissionDto>>(nationalities);
 
             _response.IsSuccess = true;
             _response.ErrorMessages.Add(string.Empty);
@@ -81,7 +78,7 @@ namespace CarSystem.API.Controllers
                 return BadRequest(_response);
             }
 
-            var nationalityResponse = _mapper.Map<NationalityDto>(nationality);
+            var nationalityResponse = _mapper.Map<ReadNationalityPermissionDto>(nationality);
 
             _response.IsSuccess = true;
             _response.Result = nationalityResponse;
@@ -194,7 +191,7 @@ namespace CarSystem.API.Controllers
             _response.IsSuccess = true;
             _response.ErrorMessages.Add(string.Empty);
             _response.StatusCode = HttpStatusCode.OK;
-            _response.Result = _mapper.Map<NationalityDto>(nationalityToUpdate);   
+            _response.Result = _mapper.Map<ReadNationalityPermissionDto>(nationalityToUpdate);   
 
             return Ok(_response);
         }

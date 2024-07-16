@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using CarSystem.API.Models;
 using CarSystem.API.Models.Domain;
+using CarSystem.API.Models.DTOs.User.CreateDTOs.UserDTOs;
+using CarSystem.API.Models.DTOs.User.ReadDTOs.UserDTOs;
+using CarSystem.API.Models.DTOs.User.UpdateDTOs.UserDTOs;
 using CarSystem.API.Models.DTOs.UserDTOs;
 using CarSystem.API.Repositories.IRepositories;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.OpenApi.Validations;
 using System.Net;
 
 namespace CarSystem.API.Controllers
@@ -44,7 +46,7 @@ namespace CarSystem.API.Controllers
                 return BadRequest(_response);
             }
 
-            var usersResponse = _mapper.Map<List<UserDto>>(users);
+            var usersResponse = _mapper.Map<List<ReadUserPermissionDto>>(users);
 
             _response.IsSuccess = true;
             _response.ErrorMessages.Add(string.Empty);
@@ -82,7 +84,7 @@ namespace CarSystem.API.Controllers
                 return BadRequest(_response);
             }
 
-            var userResponse = _mapper.Map<UserDto>(user);
+            var userResponse = _mapper.Map<ReadUserPermissionDto>(user);
 
             _response.IsSuccess = true;
             _response.ErrorMessages.Add(string.Empty);
@@ -144,7 +146,7 @@ namespace CarSystem.API.Controllers
             _response.IsSuccess = true;
             _response.ErrorMessages.Add(string.Empty);
             _response.StatusCode = HttpStatusCode.OK;
-            _response.Result = _mapper.Map<UserDto>(userToAdd);
+            _response.Result = _mapper.Map<ReadUserPermissionDto>(userToAdd);
 
             return Ok(_response);
         }
@@ -213,7 +215,7 @@ namespace CarSystem.API.Controllers
             _response.IsSuccess = true;
             _response.ErrorMessages.Add(string.Empty);
             _response.StatusCode = HttpStatusCode.OK;
-            _response.Result = _mapper.Map<UserDto>(existingUser);
+            _response.Result = _mapper.Map<ReadUserPermissionDto>(existingUser);
 
             return Ok(_response);
         }

@@ -1,10 +1,8 @@
 ﻿using AutoMapper;
 using CarSystem.API.Models;
 using CarSystem.API.Models.Domain;
-using CarSystem.API.Models.DTOs.AdminDTOs;
 using CarSystem.API.Repositories.IRepositories;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Razor.TagHelpers;
 using System.Net;
 
 namespace CarSystem.API.Controllers
