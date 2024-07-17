@@ -120,7 +120,6 @@ namespace CarSystem.API.Models.Mappers
             CreateMap<UpdateUserDto, User>().ReverseMap();
 
 
-            CreateMap<ReadAdminAdminPermissionDto, AdminAdmin>().ReverseMap();
             CreateMap<ReadAdminApplicationPermissionDto, AdminApplication>().ReverseMap();
             CreateMap<ReadAdminDamageLicensePermissionDto, AdminDamageLicense>().ReverseMap();
             CreateMap<ReadAdminDriverPermissionDto, AdminDriver>().ReverseMap();

@@ -33,7 +33,7 @@ namespace CarSystem.API.Controllers
         {
             var drivers = await _driverRepository.GetAllAsync();
 
-            if(drivers == null)
+            if (drivers == null)
             {
                 _response.ErrorMessages.Add("No driver records was found!");
                 _response.Result = null;
@@ -59,7 +59,7 @@ namespace CarSystem.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ApiResponse>> Get(int id)
         {
-            if(id <= 0)
+            if (id <= 0)
             {
                 _response.ErrorMessages.Add("The given id is invalid");
                 _response.Result = null;
@@ -71,7 +71,7 @@ namespace CarSystem.API.Controllers
 
             var driver = await _driverRepository.GetAsync(d => d.Id == id, tracked: false);
 
-            if(driver == null)
+            if (driver == null)
             {
                 _response.ErrorMessages.Add("The driver with given id not found!");
                 _response.IsSuccess = false;
@@ -95,7 +95,7 @@ namespace CarSystem.API.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<ApiResponse>> Create([FromBody]CreateDriverDto createDriverDto)
+        public async Task<ActionResult<ApiResponse>> Create([FromBody] CreateDriverDto createDriverDto)
         {
             throw new NotImplementedException();
         }

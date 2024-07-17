@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
 namespace CarSystem.API.Controllers
-{ 
+{
     [ApiController]
     [Route("api/[controller]")]
     public class NationalityController : ControllerBase
@@ -29,7 +29,7 @@ namespace CarSystem.API.Controllers
         {
             var nationalities = await _nationalityRepository.GetAllAsync();
 
-            if(nationalities == null)
+            if (nationalities == null)
             {
                 _response.Result = null;
                 _response.ErrorMessages.Add("No nationality was found!");
@@ -55,7 +55,7 @@ namespace CarSystem.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ApiResponse>> Get(int id)
         {
-            if(id <= 0)
+            if (id <= 0)
             {
                 _response.ErrorMessages.Add("The given id is not valid!");
                 _response.IsSuccess = false;
@@ -67,7 +67,7 @@ namespace CarSystem.API.Controllers
 
             var nationality = await _nationalityRepository.GetAsync(n => n.Id == id, tracked: false);
 
-            if(nationality == null)
+            if (nationality == null)
             {
                 _response.Result = null;
                 _response.ErrorMessages.Add("The nationality with given id is not found!");
@@ -92,7 +92,7 @@ namespace CarSystem.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ApiResponse>> Create([FromBody] CreateNationalityDto createNationalityDto)
         {
-            if(await _nationalityRepository.IsExistAsync(nn => nn.Name.Trim() ==
+            if (await _nationalityRepository.IsExistAsync(nn => nn.Name.Trim() ==
             createNationalityDto.Name.Trim()))
             {
                 _response.ErrorMessages.Add("The name of country is exist, please choose another one!");
@@ -133,17 +133,17 @@ namespace CarSystem.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ApiResponse>> Update(int id, [FromBody] UpdateNationalityDto updateNationalityDto)
         {
-            if(id <= 0 || updateNationalityDto.Id <= 0)
+            if (id <= 0 || updateNationalityDto.Id <= 0)
             {
                 _response.ErrorMessages.Add("The given id is invalid!");
                 _response.StatusCode = HttpStatusCode.BadRequest;
                 _response.IsSuccess = false;
                 _response.Result = null;
 
-                return BadRequest(_response);   
+                return BadRequest(_response);
             }
 
-            if(id != updateNationalityDto.Id)
+            if (id != updateNationalityDto.Id)
             {
                 _response.ErrorMessages.Add("The id you give is not match with nationalities's id");
                 _response.StatusCode = HttpStatusCode.BadRequest;
@@ -153,7 +153,7 @@ namespace CarSystem.API.Controllers
                 return BadRequest(_response);
             }
 
-            if(updateNationalityDto == null)
+            if (updateNationalityDto == null)
             {
                 _response.ErrorMessages.Add("The nationlity you are updating is null");
                 _response.StatusCode = HttpStatusCode.BadRequest;
@@ -163,7 +163,7 @@ namespace CarSystem.API.Controllers
                 return BadRequest(_response);
             }
 
-            if(await _nationalityRepository.IsExistAsync(nn => nn.Name.Trim() == updateNationalityDto.Name.Trim()))
+            if (await _nationalityRepository.IsExistAsync(nn => nn.Name.Trim() == updateNationalityDto.Name.Trim()))
             {
                 _response.ErrorMessages.Add("The name is exists, please choose another!");
                 _response.StatusCode = HttpStatusCode.BadRequest;
@@ -177,12 +177,12 @@ namespace CarSystem.API.Controllers
 
             bool updatedNationality = await _nationalityRepository.UpdateAsync(nationalityToUpdate);
 
-            if(!updatedNationality)
+            if (!updatedNationality)
             {
                 _response.ErrorMessages.Add("En error is exists while updating the entity!");
                 _response.StatusCode = HttpStatusCode.BadRequest;
                 _response.IsSuccess = false;
-                _response.Result = null; 
+                _response.Result = null;
 
                 return BadRequest(_response);
             }
@@ -190,7 +190,7 @@ namespace CarSystem.API.Controllers
             _response.IsSuccess = true;
             _response.ErrorMessages.Add(string.Empty);
             _response.StatusCode = HttpStatusCode.OK;
-            _response.Result = _mapper.Map<ReadNationalityPermissionDto>(nationalityToUpdate);   
+            _response.Result = _mapper.Map<ReadNationalityPermissionDto>(nationalityToUpdate);
 
             return Ok(_response);
         }
@@ -201,38 +201,38 @@ namespace CarSystem.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ApiResponse>> Delete(int id)
         {
-            if(id <= 0)
+            if (id <= 0)
             {
                 _response.ErrorMessages.Add("The given id is not valid!");
                 _response.StatusCode = HttpStatusCode.BadRequest;
                 _response.IsSuccess = false;
                 _response.Result = null;
-                
-                return BadRequest(_response) ;
+
+                return BadRequest(_response);
             }
 
             var nationalityToDelete = await _nationalityRepository.GetAsync(n => n.Id == id, tracked: false);
 
-            if(nationalityToDelete == null)
+            if (nationalityToDelete == null)
             {
                 _response.IsSuccess = false;
                 _response.Result = null;
                 _response.ErrorMessages.Add("The nationality with given id is not found!");
                 _response.StatusCode = HttpStatusCode.BadRequest;
 
-                return BadRequest(_response) ;
+                return BadRequest(_response);
             }
 
             bool deletedNationality = await _nationalityRepository.DeleteAsync(nationalityToDelete);
 
-            if(!deletedNationality)
+            if (!deletedNationality)
             {
                 _response.IsSuccess = false;
                 _response.ErrorMessages.Add("En error exist while deleting...");
                 _response.StatusCode = HttpStatusCode.BadRequest;
                 _response.Result = null;
 
-                return BadRequest(_response) ;
+                return BadRequest(_response);
             }
 
             _response.IsSuccess = true;

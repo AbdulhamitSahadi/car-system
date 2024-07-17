@@ -32,7 +32,7 @@ namespace CarSystem.API.Controllers
         {
             var admins = await _adminRepository.GetAllAsync(includeProperties: "User");
 
-            if(admins == null)
+            if (admins == null)
             {
                 _response.StatusCode = HttpStatusCode.NoContent;
                 _response.ErrorMessages.Add("No admin was found");
@@ -59,10 +59,10 @@ namespace CarSystem.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ApiResponse>> Get(int id)
         {
-            var admin = await _adminRepository.GetAsync(x => x.Id == id, includeProperties: "User", 
+            var admin = await _adminRepository.GetAsync(x => x.Id == id, includeProperties: "User",
                 tracked: false);
 
-            if(admin == null)
+            if (admin == null)
             {
                 _response.StatusCode = HttpStatusCode.NoContent;
                 _response.ErrorMessages.Add("No admin was found with give id");
@@ -86,9 +86,9 @@ namespace CarSystem.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<ActionResult<ApiResponse>> Create([FromBody]CreateAdminDto createAdminDto)
+        public async Task<ActionResult<ApiResponse>> Create([FromBody] CreateAdminDto createAdminDto)
         {
-            if(createAdminDto == null)
+            if (createAdminDto == null)
             {
                 _response.StatusCode = HttpStatusCode.NoContent;
                 _response.IsSuccess = false;
@@ -96,9 +96,9 @@ namespace CarSystem.API.Controllers
                 _response.Result = null;
             }
 
-            
 
-            if(!await _userRepository.IsExistAsync(u => u.Id == createAdminDto.UserId))
+
+            if (!await _userRepository.IsExistAsync(u => u.Id == createAdminDto.UserId))
             {
                 _response.IsSuccess = false;
                 _response.ErrorMessages.Add("User for admin is not found");
@@ -108,7 +108,7 @@ namespace CarSystem.API.Controllers
                 return BadRequest(_response);
             }
 
-            if(await _adminRepository.IsExistAsync(a => a.UserId == createAdminDto.UserId && a.AdminLevel == createAdminDto.AdminLevel))
+            if (await _adminRepository.IsExistAsync(a => a.UserId == createAdminDto.UserId && a.AdminLevel == createAdminDto.AdminLevel))
             {
                 _response.IsSuccess = false;
                 _response.ErrorMessages.Add("This level has been gave it to the current user!");
@@ -123,7 +123,7 @@ namespace CarSystem.API.Controllers
 
             var createdAdmin = _adminRepository.CreateAsync(adminToCreate);
 
-            if(createdAdmin == null)
+            if (createdAdmin == null)
             {
                 _response.ErrorMessages.Add("Admin don't created successfully!");
                 _response.Result = null;
@@ -146,7 +146,7 @@ namespace CarSystem.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ApiResponse>> Update(int id, [FromBody] UpdateAdminDto updateAdminDto)
         {
-            if(updateAdminDto == null)
+            if (updateAdminDto == null)
             {
                 _response.ErrorMessages.Add("Updated field is empty!");
                 _response.StatusCode = HttpStatusCode.BadRequest;
@@ -156,7 +156,7 @@ namespace CarSystem.API.Controllers
                 return BadRequest(_response);
             }
 
-            if(updateAdminDto.Id != id)
+            if (updateAdminDto.Id != id)
             {
                 _response.ErrorMessages.Add("The given id with updated model is not match!");
                 _response.StatusCode = HttpStatusCode.BadRequest;
@@ -165,8 +165,8 @@ namespace CarSystem.API.Controllers
 
                 return BadRequest(_response);
             }
-            
-            if(Convert.ToInt16(updateAdminDto.AdminLevel) < 0 || 
+
+            if (Convert.ToInt16(updateAdminDto.AdminLevel) < 0 ||
                 Convert.ToInt16(updateAdminDto.AdminLevel) > 2)
             {
                 _response.StatusCode = HttpStatusCode.BadRequest;
@@ -193,7 +193,7 @@ namespace CarSystem.API.Controllers
 
             var updatedAdmin = _adminRepository.UpdateAsync(existingAdmin);
 
-            if(!await updatedAdmin)
+            if (!await updatedAdmin)
             {
                 _response.StatusCode = HttpStatusCode.NoContent;
                 _response.IsSuccess = false;
@@ -218,7 +218,7 @@ namespace CarSystem.API.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<ApiResponse>> Delete(int id)
         {
-            if(id <= 0)
+            if (id <= 0)
             {
                 _response.IsSuccess = false;
                 _response.ErrorMessages.Add("The id you given is invalid!");
@@ -228,13 +228,13 @@ namespace CarSystem.API.Controllers
                 return BadRequest(_response);
             }
 
-            if(!await _adminRepository.IsExistAsync(a => a.Id == id))
+            if (!await _adminRepository.IsExistAsync(a => a.Id == id))
             {
                 _response.ErrorMessages.Add("The entity with given id is not found");
                 _response.StatusCode = HttpStatusCode.BadRequest;
                 _response.Result = null;
                 _response.IsSuccess = false;
-                
+
                 return BadRequest(_response);
             }
 

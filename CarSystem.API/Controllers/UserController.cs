@@ -16,7 +16,7 @@ namespace CarSystem.API.Controllers
         private readonly IPersonRepository _personRepository;
         private readonly IMapper _mapper;
         private ApiResponse _response;
-    
+
         public UserController(IUserRepository userRepository, IPersonRepository personRepository,
             IMapper mapper)
         {
@@ -33,7 +33,7 @@ namespace CarSystem.API.Controllers
         {
             var users = await _userRepository.GetAllAsync();
 
-            if(users == null)
+            if (users == null)
             {
                 _response.IsSuccess = false;
                 _response.ErrorMessages.Add("No users record is exists");
@@ -59,7 +59,7 @@ namespace CarSystem.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ApiResponse>> Get(int id)
         {
-            if(id <= 0)
+            if (id <= 0)
             {
                 _response.IsSuccess = false;
                 _response.ErrorMessages.Add("given id is invalid!");
@@ -71,7 +71,7 @@ namespace CarSystem.API.Controllers
 
             var user = await _userRepository.GetAsync(a => a.Id == id, tracked: false);
 
-            if(user == null)
+            if (user == null)
             {
                 _response.ErrorMessages.Add("The user with given id is not found");
                 _response.IsSuccess = false;
@@ -94,9 +94,9 @@ namespace CarSystem.API.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<ApiResponse>> Create([FromBody]CreateUserDto createUserDto)
+        public async Task<ActionResult<ApiResponse>> Create([FromBody] CreateUserDto createUserDto)
         {
-            if(createUserDto == null)
+            if (createUserDto == null)
             {
                 _response.StatusCode = HttpStatusCode.BadRequest;
                 _response.ErrorMessages.Add("The created user content is empty!");
@@ -106,17 +106,17 @@ namespace CarSystem.API.Controllers
                 return BadRequest(_response);
             }
 
-            if(!await _personRepository.IsExistAsync(p => p.Id == createUserDto.PersonId))
+            if (!await _personRepository.IsExistAsync(p => p.Id == createUserDto.PersonId))
             {
                 _response.IsSuccess = false;
                 _response.Result = null;
                 _response.StatusCode = HttpStatusCode.BadRequest;
                 _response.ErrorMessages.Add("The person with given id don't exist!");
 
-                return BadRequest(_response);   
+                return BadRequest(_response);
             }
 
-            if(await _userRepository.GetAsync(un => un.UserName.Trim() == createUserDto.UserName.Trim(),
+            if (await _userRepository.GetAsync(un => un.UserName.Trim() == createUserDto.UserName.Trim(),
                     tracked: false) != null)
             {
                 _response.ErrorMessages.Add("The choosing user name is match with other, please choose another user name!");
@@ -154,7 +154,7 @@ namespace CarSystem.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ApiResponse>> Update(int id, [FromBody] UpdateUserDto updateUserDto)
         {
-            if(updateUserDto == null)
+            if (updateUserDto == null)
             {
                 _response.ErrorMessages.Add("The updated user is null");
                 _response.StatusCode = HttpStatusCode.BadRequest;
@@ -164,7 +164,7 @@ namespace CarSystem.API.Controllers
                 return BadRequest(_response);
             }
 
-            if(id <= 0 || updateUserDto.Id <= 0)
+            if (id <= 0 || updateUserDto.Id <= 0)
             {
                 _response.ErrorMessages.Add("The given id is invalid!");
                 _response.StatusCode = HttpStatusCode.BadRequest;
@@ -176,7 +176,7 @@ namespace CarSystem.API.Controllers
 
             var existingUser = await _userRepository.GetAsync(u => u.Id == id, tracked: false);
 
-            if(existingUser == null)
+            if (existingUser == null)
             {
                 _response.ErrorMessages.Add("The entity with id is not exist!");
                 _response.StatusCode = HttpStatusCode.BadRequest;
@@ -186,7 +186,7 @@ namespace CarSystem.API.Controllers
                 return BadRequest(_response);
             }
 
-            if(await _userRepository.GetAsync(un => un.UserName.Trim() == updateUserDto.UserName.Trim(),
+            if (await _userRepository.GetAsync(un => un.UserName.Trim() == updateUserDto.UserName.Trim(),
                     tracked: false) != null)
             {
                 _response.ErrorMessages.Add("The give user name is exists, please choose another!");
@@ -197,7 +197,7 @@ namespace CarSystem.API.Controllers
 
             existingUser = _mapper.Map<User>(updateUserDto);
 
-            
+
 
             var updatedUser = await _userRepository.UpdateAsync(existingUser);
 
@@ -223,7 +223,7 @@ namespace CarSystem.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ApiResponse>> Delete(int id)
         {
-            if(id <= 0)
+            if (id <= 0)
             {
                 _response.ErrorMessages.Add("The given id is invalid!");
                 _response.StatusCode = HttpStatusCode.BadRequest;
@@ -235,7 +235,7 @@ namespace CarSystem.API.Controllers
 
             var userToDelete = await _userRepository.GetAsync(u => u.Id == id, tracked: false);
 
-            if(userToDelete == null)
+            if (userToDelete == null)
             {
                 _response.ErrorMessages.Add("The user is not found");
                 _response.StatusCode = HttpStatusCode.BadRequest;
@@ -247,7 +247,7 @@ namespace CarSystem.API.Controllers
 
             var deletedUser = await _userRepository.DeleteAsync(userToDelete);
 
-            if(!deletedUser)
+            if (!deletedUser)
             {
                 _response.ErrorMessages.Add("Deleting Field!");
                 _response.StatusCode = HttpStatusCode.BadRequest;

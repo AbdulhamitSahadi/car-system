@@ -29,7 +29,6 @@ namespace CarSystem.API.Data
         public DbSet<UserPermission> UsersPermissions { get; set; }
         public DbSet<VisionTest> VisionTests { get; set; }
         public DbSet<WritingTest> WrittenTests { get; set; }
-        public DbSet<AdminAdmin> AdminsAdmins { get; set; }
         public DbSet<AdminApplication> AdminsApplications { get; set; }
         public DbSet<AdminDamageLicense> AdminsDamageLicenses { get; set; }
         public DbSet<AdminDriver> AdminsDrivers { get; set; }
@@ -54,391 +53,379 @@ namespace CarSystem.API.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            //modelBuilder.Entity<Admin>()
-            //    .HasOne(u => u.User)
-            //    .WithMany()
-            //    .HasForeignKey(fk => fk.UserId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminAdmin>()
-            //    .HasOne(a => a.Admin)
-            //    .WithMany(x => x.Admins_Entities)
-            //    .HasForeignKey(fk => fk.AdminId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminAdmin>()
-            //    .HasOne(e => e.Entity)
-            //    .WithMany(x => x.Admins_Entities)
-            //    .HasForeignKey(fk => fk.EntityId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminApplication>()
-            //    .HasOne(a => a.Admin)
-            //    .WithMany(ap => ap.AdminsApplications)
-            //    .HasForeignKey(fk => fk.AdminId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminApplication>()
-            //    .HasOne(a => a.Entity)
-            //    .WithMany(x => x.Admins_Entities)
-            //    .HasForeignKey(fk => fk.EntityId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminDamageLicense>()
-            //    .HasOne(a => a.Admin)
-            //    .WithMany(m => m.AdminsDamageLicenses)
-            //    .HasForeignKey(fk => fk.AdminId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminDamageLicense>()
-            //    .HasOne(e => e.Entity)
-            //    .WithMany(m => m.Admins_Entities)
-            //    .HasForeignKey(fk => fk.EntityId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminDriver>()
-            //    .HasOne(a => a.Admin)
-            //    .WithMany(m => m.AdminsDrivers)
-            //    .HasForeignKey(fk => fk.AdminId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminDriver>()
-            //    .HasOne(e => e.Entity)
-            //    .WithMany(m => m.Admins_Entities)
-            //    .HasForeignKey(fk => fk.EntityId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminLicense>()
-            //    .HasOne(a => a.Admin)
-            //    .WithMany(m => m.AdminsLicenses)
-            //    .HasForeignKey(fk => fk.AdminId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminLicense>()
-            //    .HasOne(e => e.Entity)
-            //    .WithMany(m => m.Admins_Entities)
-            //    .HasForeignKey(fk => fk.EntityId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminLicenseClass>()
-            //    .HasOne(a => a.Admin)
-            //    .WithMany(m => m.AdminsLicenseClasses)
-            //    .HasForeignKey(fk => fk.AdminId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminLicenseClass>()
-            //    .HasOne(e => e.Entity)
-            //    .WithMany(m => m.Admins_Entities)
-            //    .HasForeignKey(fk => fk.EntityId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminLostLicense>()
-            //    .HasOne(a => a.Admin)
-            //    .WithMany(m => m.AdminsLostLicenses)
-            //    .HasForeignKey(fk => fk.AdminId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminLostLicense>()
-            //    .HasOne(e => e.Entity)
-            //    .WithMany(m => m.Admins_Entities)
-            //    .HasForeignKey(fk => fk.EntityId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminNationality>()
-            //    .HasOne(a => a.Admin)
-            //    .WithMany(m => m.AdminsNationalities)
-            //    .HasForeignKey(fk => fk.AdminId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminNationality>()
-            //    .HasOne(e => e.Entity)
-            //    .WithMany(m => m.Admins_Entities)
-            //    .HasForeignKey(fk => fk.EntityId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminOption>()
-            //    .HasOne(a => a.Admin)
-            //    .WithMany(m => m.AdminsOptions)
-            //    .HasForeignKey(fk => fk.AdminId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminOption>()
-            //    .HasOne(e => e.Entity)
-            //    .WithMany(m => m.Admins_Entities)
-            //    .HasForeignKey(fk => fk.EntityId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminPerson>()
-            //    .HasOne(a => a.Admin)
-            //    .WithMany(m => m.AdminsPeople)
-            //    .HasForeignKey(fk => fk.AdminId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminPerson>()
-            //    .HasOne(e => e.Entity)
-            //    .WithMany(m => m.Admins_Entities)
-            //    .HasForeignKey(fk => fk.EntityId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminQuestion>()
-            //    .HasOne(a => a.Admin)
-            //    .WithMany(m => m.AdminsQuestions)
-            //    .HasForeignKey(fk => fk.AdminId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminQuestion>()
-            //    .HasOne(e => e.Entity)
-            //    .WithMany(m => m.Admins_Entities)
-            //    .HasForeignKey(fk => fk.EntityId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminRenewalLicense>()
-            //    .HasOne(a => a.Admin)
-            //    .WithMany(m => m.AdminsRenewalLicenses)
-            //    .HasForeignKey(fk => fk.AdminId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminRenewalLicense>()
-            //    .HasOne(e => e.Entity)
-            //    .WithMany(m => m.Admins_Entities)
-            //    .HasForeignKey(fk => fk.EntityId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminTest>()
-            //    .HasOne(a => a.Admin)
-            //    .WithMany(m => m.AdminsTests)
-            //    .HasForeignKey(fk => fk.AdminId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminTest>()
-            //    .HasOne(e => e.Entity)
-            //    .WithMany(m => m.Admins_Entities)
-            //    .HasForeignKey(fk => fk.EntityId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminWritingTest>()
-            //    .HasOne(a => a.Admin)
-            //    .WithMany(m => m.AdminsWritingTests)
-            //    .HasForeignKey(fk => fk.AdminId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminWritingTest>()
-            //    .HasOne(e => e.Entity)
-            //    .WithMany(m => m.Admins_Entities)
-            //    .HasForeignKey(fk => fk.EntityId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminVisionTest>()
-            //    .HasOne(a => a.Admin)
-            //    .WithMany(m => m.AdminsVisionTests)
-            //    .HasForeignKey(fk => fk.AdminId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminVisionTest>()
-            //    .HasOne(e => e.Entity)
-            //    .WithMany(m => m.Admins_Entities)
-            //    .HasForeignKey(fk => fk.EntityId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminPermission>()
-            //    .HasOne(a => a.Admin)
-            //    .WithMany(m => m.AdminsPermissions)
-            //    .HasForeignKey(fk => fk.AdminId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminPermission>()
-            //    .HasOne(e => e.Entity)
-            //    .WithMany(m => m.Admins_Entities)
-            //    .HasForeignKey(fk => fk.EntityId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminUserPermission>()
-            //    .HasOne(a => a.Admin)
-            //    .WithMany(m => m.AdminsUserPermissions)
-            //    .HasForeignKey(fk => fk.AdminId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<AdminUserPermission>()
-            //    .HasOne(e => e.Entity)
-            //    .WithMany(m => m.Admins_Entities)
-            //    .HasForeignKey(fk => fk.EntityId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-
-
-            //modelBuilder.Entity<Application>()
-            //    .HasOne(u => u.User)
-            //    .WithMany(m => m.Applications)
-            //    .HasForeignKey(fk => fk.UserId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-
-
-            //modelBuilder.Entity<DamageLicense>()
-            //    .HasOne(l => l.License)
-            //    .WithMany(m => m.DamageLicenses)
-            //    .HasForeignKey(fk => fk.LicenseId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<DamageLicense>()
-            //    .HasOne(a => a.Application)
-            //    .WithMany()
-            //    .HasForeignKey(fk => fk.ApplicationId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-
-
-            //modelBuilder.Entity<Driver>()
-            //    .HasOne(u => u.User)
-            //    .WithMany()
-            //    .HasForeignKey(fk => fk.UserId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
+            modelBuilder.Entity<Admin>()
+                .HasOne(u => u.User)
+                .WithMany()
+                .HasForeignKey(fk => fk.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminApplication>()
+                .HasOne(a => a.Admin)
+                .WithMany(ap => ap.AdminsApplications)
+                .HasForeignKey(fk => fk.AdminId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminApplication>()
+                .HasOne(a => a.Entity)
+                .WithMany(x => x.Admins_Entities)
+                .HasForeignKey(fk => fk.EntityId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminDamageLicense>()
+                .HasOne(a => a.Admin)
+                .WithMany(m => m.AdminsDamageLicenses)
+                .HasForeignKey(fk => fk.AdminId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminDamageLicense>()
+                .HasOne(e => e.Entity)
+                .WithMany(m => m.Admins_Entities)
+                .HasForeignKey(fk => fk.EntityId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminDriver>()
+                .HasOne(a => a.Admin)
+                .WithMany(m => m.AdminsDrivers)
+                .HasForeignKey(fk => fk.AdminId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminDriver>()
+                .HasOne(e => e.Entity)
+                .WithMany(m => m.Admins_Entities)
+                .HasForeignKey(fk => fk.EntityId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminLicense>()
+                .HasOne(a => a.Admin)
+                .WithMany(m => m.AdminsLicenses)
+                .HasForeignKey(fk => fk.AdminId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminLicense>()
+                .HasOne(e => e.Entity)
+                .WithMany(m => m.Admins_Entities)
+                .HasForeignKey(fk => fk.EntityId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminLicenseClass>()
+                .HasOne(a => a.Admin)
+                .WithMany(m => m.AdminsLicenseClasses)
+                .HasForeignKey(fk => fk.AdminId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminLicenseClass>()
+                .HasOne(e => e.Entity)
+                .WithMany(m => m.Admins_Entities)
+                .HasForeignKey(fk => fk.EntityId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminLostLicense>()
+                .HasOne(a => a.Admin)
+                .WithMany(m => m.AdminsLostLicenses)
+                .HasForeignKey(fk => fk.AdminId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminLostLicense>()
+                .HasOne(e => e.Entity)
+                .WithMany(m => m.Admins_Entities)
+                .HasForeignKey(fk => fk.EntityId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminNationality>()
+                .HasOne(a => a.Admin)
+                .WithMany(m => m.AdminsNationalities)
+                .HasForeignKey(fk => fk.AdminId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminNationality>()
+                .HasOne(e => e.Entity)
+                .WithMany(m => m.Admins_Entities)
+                .HasForeignKey(fk => fk.EntityId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminOption>()
+                .HasOne(a => a.Admin)
+                .WithMany(m => m.AdminsOptions)
+                .HasForeignKey(fk => fk.AdminId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminOption>()
+                .HasOne(e => e.Entity)
+                .WithMany(m => m.Admins_Entities)
+                .HasForeignKey(fk => fk.EntityId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminPerson>()
+                .HasOne(a => a.Admin)
+                .WithMany(m => m.AdminsPeople)
+                .HasForeignKey(fk => fk.AdminId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminPerson>()
+                .HasOne(e => e.Entity)
+                .WithMany(m => m.Admins_Entities)
+                .HasForeignKey(fk => fk.EntityId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminQuestion>()
+                .HasOne(a => a.Admin)
+                .WithMany(m => m.AdminsQuestions)
+                .HasForeignKey(fk => fk.AdminId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminQuestion>()
+                .HasOne(e => e.Entity)
+                .WithMany(m => m.Admins_Entities)
+                .HasForeignKey(fk => fk.EntityId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminRenewalLicense>()
+                .HasOne(a => a.Admin)
+                .WithMany(m => m.AdminsRenewalLicenses)
+                .HasForeignKey(fk => fk.AdminId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminRenewalLicense>()
+                .HasOne(e => e.Entity)
+                .WithMany(m => m.Admins_Entities)
+                .HasForeignKey(fk => fk.EntityId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminTest>()
+                .HasOne(a => a.Admin)
+                .WithMany(m => m.AdminsTests)
+                .HasForeignKey(fk => fk.AdminId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminTest>()
+                .HasOne(e => e.Entity)
+                .WithMany(m => m.Admins_Entities)
+                .HasForeignKey(fk => fk.EntityId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminWritingTest>()
+                .HasOne(a => a.Admin)
+                .WithMany(m => m.AdminsWritingTests)
+                .HasForeignKey(fk => fk.AdminId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminWritingTest>()
+                .HasOne(e => e.Entity)
+                .WithMany(m => m.Admins_Entities)
+                .HasForeignKey(fk => fk.EntityId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminVisionTest>()
+                .HasOne(a => a.Admin)
+                .WithMany(m => m.AdminsVisionTests)
+                .HasForeignKey(fk => fk.AdminId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminVisionTest>()
+                .HasOne(e => e.Entity)
+                .WithMany(m => m.Admins_Entities)
+                .HasForeignKey(fk => fk.EntityId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminPermission>()
+                .HasOne(a => a.Admin)
+                .WithMany(m => m.Admins_Entities)
+                .HasForeignKey(fk => fk.AdminId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminPermission>()
+                .HasOne(e => e.Entity)
+                .WithMany(m => m.Admins_Entities)
+                .HasForeignKey(fk => fk.EntityId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminUserPermission>()
+                .HasOne(a => a.Admin)
+                .WithMany(m => m.AdminsUserPermissions)
+                .HasForeignKey(fk => fk.AdminId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AdminUserPermission>()
+                .HasOne(e => e.Entity)
+                .WithMany(m => m.Admins_Entities)
+                .HasForeignKey(fk => fk.EntityId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+
+            modelBuilder.Entity<Application>()
+                .HasOne(u => u.User)
+                .WithMany(m => m.Applications)
+                .HasForeignKey(fk => fk.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+
+            modelBuilder.Entity<DamageLicense>()
+                .HasOne(l => l.License)
+                .WithMany(m => m.DamageLicenses)
+                .HasForeignKey(fk => fk.LicenseId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<DamageLicense>()
+                .HasOne(a => a.Application)
+                .WithMany()
+                .HasForeignKey(fk => fk.ApplicationId)
+                .OnDelete(DeleteBehavior.Restrict);
+
 
-
-            //modelBuilder.Entity<License>()
-            //    .HasOne(d => d.Driver)
-            //    .WithMany(m => m.OwnedLicenses)
-            //    .HasForeignKey(fk => fk.DriverId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<License>()
-            //    .HasOne(a => a.Application)
-            //    .WithMany()
-            //    .HasForeignKey(fk => fk.ApplicationId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<License>()
-            //    .HasMany(m => m.DamageLicenses)
-            //    .WithOne(l => l.License)
-            //    .HasForeignKey(fk => fk.LicenseId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<License>()
-            //    .HasMany(m => m.LostLicenses)
-            //    .WithOne(l => l.License)
-            //    .HasForeignKey(fk => fk.LicenseId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<License>()
-            //    .HasMany(m => m.RenewalLicenses)
-            //    .WithOne(l => l.License)
-            //    .HasForeignKey(fk => fk.LicenseId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-
-
-            //modelBuilder.Entity<LostLicense>()
-            //    .HasOne(a => a.Application)
-            //    .WithMany()
-            //    .HasForeignKey(fk => fk.ApplicationId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-
-
-            //modelBuilder.Entity<Nationality>()
-            //    .HasMany(p => p.People)
-            //    .WithOne(n => n.Nationality)
-            //    .HasForeignKey(fk => fk.NationalityId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-
-
-            //modelBuilder.Entity<Option>()
-            //    .HasOne(q => q.Question)
-            //    .WithMany(p => p.Options)
-            //    .HasForeignKey(fk => fk.QuestionId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-
-
-            //modelBuilder.Entity<UserPermission>()
-            //    .HasOne(u => u.User)
-            //    .WithMany(m => m.UserPermissions)
-            //    .HasForeignKey(fk => fk.UserId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<UserPermission>()
-            //    .HasOne(p => p.Permission)
-            //    .WithMany(m => m.UsersPermissions)
-            //    .HasForeignKey(fk => fk.PermissionId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-
-
-            //modelBuilder.Entity<Question>()
-            //    .HasOne(t => t.TestCategory)
-            //    .WithMany()
-            //    .HasForeignKey(fk => fk.TestCategoryId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-
-
-            //modelBuilder.Entity<RenewalLicense>()
-            //    .HasOne(a => a.Application)
-            //    .WithMany()
-            //    .HasForeignKey(fk => fk.ApplicationId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-
-            ////to edit later
-            //modelBuilder.Entity<TakeTest>()
-            //    .HasMany(m => m.Questions)
-            //    .WithOne();
-
-            //modelBuilder.Entity<TakeTest>()
-            //    .HasOne(tc => tc.TestCategory)
-            //    .WithMany()
-            //    .HasForeignKey(fk => fk.TestCategoryId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-
-
-            ////to edit later
-            //modelBuilder.Entity<Test>()
-            //    .HasOne(a => a.Application)
-            //    .WithMany()
-            //    .HasForeignKey(fk => fk.ApplicationId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<Test>()
-            //    .HasOne(tc => tc.TestCategory)
-            //    .WithMany()
-            //    .HasForeignKey(fk => fk.TestCategoryId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<Test>()
-            //    .HasMany(m => m.WrittenTests)
-            //    .WithOne(t => t.Test)
-            //    .HasForeignKey(fk => fk.TestId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<Test>()
-            //    .HasMany(m => m.VisionTests)
-            //    .WithOne(t => t.Test)
-            //    .HasForeignKey(fk => fk.TestId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<User>()
-            //    .HasOne(p => p.Person)
-            //    .WithMany()
-            //    .HasForeignKey(fk => fk.PersonId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-
-
-            //modelBuilder.Entity<VisionTest>()
-            //    .HasOne(tt => tt.TakeTest)
-            //    .WithMany()
-            //    .HasForeignKey(fk => fk.TakeTestId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-
-            //modelBuilder.Entity<WritingTest>()
-            //    .HasOne(tt => tt.TakeTest)
-            //    .WithMany()
-            //    .HasForeignKey(fk => fk.TakeTestId)
-            //    .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Driver>()
+                .HasOne(u => u.User)
+                .WithMany()
+                .HasForeignKey(fk => fk.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+
+            modelBuilder.Entity<License>()
+                .HasOne(d => d.Driver)
+                .WithMany(m => m.OwnedLicenses)
+                .HasForeignKey(fk => fk.DriverId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<License>()
+                .HasOne(a => a.Application)
+                .WithMany()
+                .HasForeignKey(fk => fk.ApplicationId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<License>()
+                .HasMany(m => m.DamageLicenses)
+                .WithOne(l => l.License)
+                .HasForeignKey(fk => fk.LicenseId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<License>()
+                .HasMany(m => m.LostLicenses)
+                .WithOne(l => l.License)
+                .HasForeignKey(fk => fk.LicenseId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<License>()
+                .HasMany(m => m.RenewalLicenses)
+                .WithOne(l => l.License)
+                .HasForeignKey(fk => fk.LicenseId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+
+            modelBuilder.Entity<LostLicense>()
+                .HasOne(a => a.Application)
+                .WithMany()
+                .HasForeignKey(fk => fk.ApplicationId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+
+            modelBuilder.Entity<Nationality>()
+                .HasMany(p => p.People)
+                .WithOne(n => n.Nationality)
+                .HasForeignKey(fk => fk.NationalityId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+
+            modelBuilder.Entity<Option>()
+                .HasOne(q => q.Question)
+                .WithMany(p => p.Options)
+                .HasForeignKey(fk => fk.QuestionId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+
+            modelBuilder.Entity<UserPermission>()
+                .HasOne(u => u.User)
+                .WithMany(m => m.UserPermissions)
+                .HasForeignKey(fk => fk.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<UserPermission>()
+                .HasOne(p => p.Permission)
+                .WithMany(m => m.UsersPermissions)
+                .HasForeignKey(fk => fk.PermissionId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+
+            modelBuilder.Entity<Question>()
+                .HasOne(t => t.TestCategory)
+                .WithMany()
+                .HasForeignKey(fk => fk.TestCategoryId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+
+            modelBuilder.Entity<RenewalLicense>()
+                .HasOne(a => a.Application)
+                .WithMany()
+                .HasForeignKey(fk => fk.ApplicationId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+            //to edit later
+            modelBuilder.Entity<TakeTest>()
+                .HasMany(m => m.Questions)
+                .WithOne();
+
+            modelBuilder.Entity<TakeTest>()
+                .HasOne(tc => tc.TestCategory)
+                .WithMany()
+                .HasForeignKey(fk => fk.TestCategoryId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+
+            //to edit later
+            modelBuilder.Entity<Test>()
+                .HasOne(a => a.Application)
+                .WithMany()
+                .HasForeignKey(fk => fk.ApplicationId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Test>()
+                .HasOne(tc => tc.TestCategory)
+                .WithMany()
+                .HasForeignKey(fk => fk.TestCategoryId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Test>()
+                .HasMany(m => m.WrittenTests)
+                .WithOne(t => t.Test)
+                .HasForeignKey(fk => fk.TestId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Test>()
+                .HasMany(m => m.VisionTests)
+                .WithOne(t => t.Test)
+                .HasForeignKey(fk => fk.TestId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<User>()
+                .HasOne(p => p.Person)
+                .WithMany()
+                .HasForeignKey(fk => fk.PersonId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+
+            modelBuilder.Entity<VisionTest>()
+                .HasOne(tt => tt.TakeTest)
+                .WithMany()
+                .HasForeignKey(fk => fk.TakeTestId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+            modelBuilder.Entity<WritingTest>()
+                .HasOne(tt => tt.TakeTest)
+                .WithMany()
+                .HasForeignKey(fk => fk.TakeTestId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             //modelBuilder.Entity<Admin>()
             //    .HasOne(u => u.User) 
@@ -568,7 +555,7 @@ namespace CarSystem.API.Data
             //    .OnDelete(DeleteBehavior.Restrict);
 
 
-            
+
             //modelBuilder.Entity<DamageLicense>()
             //    .HasOne(l => l.License)
             //    .WithMany(da => da.DamageLicenses)
@@ -632,7 +619,7 @@ namespace CarSystem.API.Data
             //    .WithMany()
             //    .HasForeignKey(fk => fk.TestCategoryId)
             //    .OnDelete(DeleteBehavior.Restrict);
-              
+
 
 
             //modelBuilder.Entity<Test>()

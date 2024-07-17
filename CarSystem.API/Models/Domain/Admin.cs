@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarSystem.API.Models.Domain
 {
-    public class Admin : DomainTrackable<AdminAdmin>
+    public class Admin : DomainTrackable<AdminPermission>
     {
         //[Key]
         //public int Id { get; set; }
@@ -47,7 +47,7 @@ namespace CarSystem.API.Models.Domain
         public ICollection<AdminWritingTest>? AdminsWritingTests { get; set; }
         public ICollection<AdminVisionTest>? AdminsVisionTests { get; set; }
 
-        public ICollection<AdminPermission>? AdminsPermissions { get; set; }
+        //public ICollection<AdminPermission>? AdminsPermissions { get; set; }
 
         public ICollection<AdminUserPermission>? AdminsUserPermissions { get; set; }
         

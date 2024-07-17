@@ -31,7 +31,7 @@ namespace CarSystem.API.Controllers
         {
             var people = await _personRepository.GetAllAsync();
 
-            if(people == null)
+            if (people == null)
             {
                 _response.ErrorMessages.Add("No people record has found");
                 _response.Result = null;
@@ -55,7 +55,7 @@ namespace CarSystem.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ApiResponse>> Get(int id)
         {
-            if(id <= 0)
+            if (id <= 0)
             {
                 _response.ErrorMessages.Add("Give id is in valid");
                 _response.Result = null;
@@ -67,7 +67,7 @@ namespace CarSystem.API.Controllers
 
             var person = await _personRepository.GetAsync(p => p.Id == id, tracked: false);
 
-            if(person == null)
+            if (person == null)
             {
                 _response.ErrorMessages.Add("The person with id don't exist!");
                 _response.IsSuccess = false;
@@ -90,9 +90,9 @@ namespace CarSystem.API.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<ApiResponse>> Create([FromBody]CreatePersonDto createPersonDto)
+        public async Task<ActionResult<ApiResponse>> Create([FromBody] CreatePersonDto createPersonDto)
         {
-            if(createPersonDto == null)
+            if (createPersonDto == null)
             {
                 _response.ErrorMessages.Add("The person you create is null");
                 _response.IsSuccess = false;
@@ -102,7 +102,7 @@ namespace CarSystem.API.Controllers
                 return BadRequest(_response);
             }
 
-            if(await _personRepository.IsExistAsync(fn => (fn.FirstName.Trim() + fn.LastName.Trim()) ==
+            if (await _personRepository.IsExistAsync(fn => (fn.FirstName.Trim() + fn.LastName.Trim()) ==
             (createPersonDto.FirstName.Trim() + createPersonDto.LastName.Trim())))
             {
                 _response.ErrorMessages.Add("The full name is exist!");
@@ -113,7 +113,7 @@ namespace CarSystem.API.Controllers
                 return BadRequest(_response);
             }
 
-            if(await _personRepository.IsExistAsync(e => e.Email.Trim() == 
+            if (await _personRepository.IsExistAsync(e => e.Email.Trim() ==
             createPersonDto.Email.Trim()))
             {
                 _response.ErrorMessages.Add("The email has exist");
@@ -124,7 +124,7 @@ namespace CarSystem.API.Controllers
                 return BadRequest(_response);
             }
 
-            if(await _personRepository.IsExistAsync(pn => pn.PhoneNumber.Trim() ==
+            if (await _personRepository.IsExistAsync(pn => pn.PhoneNumber.Trim() ==
             createPersonDto.PhoneNumber.Trim()))
             {
                 _response.ErrorMessages.Add("The phone number is exist!");
@@ -135,7 +135,7 @@ namespace CarSystem.API.Controllers
                 return BadRequest(_response);
             }
 
-            if(!await _nationalityRepository.IsExistAsync(ni => ni.Id == createPersonDto.NationalityId))
+            if (!await _nationalityRepository.IsExistAsync(ni => ni.Id == createPersonDto.NationalityId))
             {
                 _response.ErrorMessages.Add("The nationality id don't found!");
                 _response.IsSuccess = false;
@@ -171,7 +171,7 @@ namespace CarSystem.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ApiResponse>> Update(int id, [FromBody] UpdatePersonPermissionDto updatePersonDto)
         {
-            if(id <= 0 || updatePersonDto.Id <= 0)
+            if (id <= 0 || updatePersonDto.Id <= 0)
             {
                 _response.Result = null;
                 _response.ErrorMessages.Add("The given id is invalid");
@@ -183,19 +183,19 @@ namespace CarSystem.API.Controllers
 
             var existingPerson = await _personRepository.GetAsync(p => p.Id == id, tracked: false);
 
-            if(existingPerson == null)
+            if (existingPerson == null)
             {
-                _response.StatusCode=HttpStatusCode.BadRequest;
-                _response.IsSuccess=false;
+                _response.StatusCode = HttpStatusCode.BadRequest;
+                _response.IsSuccess = false;
                 _response.ErrorMessages.Add("The person with id is not exists!");
                 _response.Result = null;
 
                 return BadRequest(_response);
             }
 
-            if(await _personRepository.IsExistAsync(fn => fn.FullName.Trim().Concat(fn.LastName.Trim()) ==
+            if (await _personRepository.IsExistAsync(fn => fn.FullName.Trim().Concat(fn.LastName.Trim()) ==
             updatePersonDto.FirstName.Trim().Concat(updatePersonDto.LastName.Trim())))
-            { 
+            {
                 _response.IsSuccess = false;
                 _response.StatusCode = HttpStatusCode.BadRequest;
                 _response.ErrorMessages.Add("The name is exists!");
@@ -204,7 +204,7 @@ namespace CarSystem.API.Controllers
                 return BadRequest(_response);
             }
 
-            if(await _personRepository.IsExistAsync(e => e.Email.Trim() == 
+            if (await _personRepository.IsExistAsync(e => e.Email.Trim() ==
             updatePersonDto.Email.Trim()))
             {
                 _response.ErrorMessages.Add("Email is exist!");
@@ -215,7 +215,7 @@ namespace CarSystem.API.Controllers
                 return BadRequest(_response);
             }
 
-            if(await _personRepository.IsExistAsync(pn => pn.PhoneNumber.Trim()
+            if (await _personRepository.IsExistAsync(pn => pn.PhoneNumber.Trim()
             == updatePersonDto.PhoneNumber.Trim()))
             {
                 _response.ErrorMessages.Add("Phone number is exist!");
@@ -254,7 +254,7 @@ namespace CarSystem.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ApiResponse>> Delete(int id)
         {
-            if(id <= 0)
+            if (id <= 0)
             {
                 _response.ErrorMessages.Add("The id is invalid!");
                 _response.IsSuccess = false;
@@ -264,7 +264,7 @@ namespace CarSystem.API.Controllers
 
             var personToDelete = await _personRepository.GetAsync(p => p.Id == id, tracked: false);
 
-            if(personToDelete == null)
+            if (personToDelete == null)
             {
                 _response.Result = null;
                 _response.ErrorMessages.Add("The person with given id is not exists!");
