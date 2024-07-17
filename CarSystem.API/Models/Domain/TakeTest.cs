@@ -14,13 +14,7 @@ namespace CarSystem.API.Models.Domain
         public ICollection<int> Options { get; set; }
 
 
-        [ForeignKey("VisionTest")]
-        public int? VisionTestId { get; set; }
-        public VisionTest? VisionTest { get; set; }
-
-
-        [ForeignKey("WritingTest")]
-        public int? WritingTestId { get; set; }
-        public WritingTest? WritingTest { get; set; }
+        public int TestCategoryId { get; set; }
+        public TestCategory TestCategory { get; set; }
     }
 }

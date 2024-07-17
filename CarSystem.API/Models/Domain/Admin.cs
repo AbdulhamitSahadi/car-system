@@ -46,6 +46,10 @@ namespace CarSystem.API.Models.Domain
         public ICollection<AdminTest>? AdminsTests { get; set; }
         public ICollection<AdminWritingTest>? AdminsWritingTests { get; set; }
         public ICollection<AdminVisionTest>? AdminsVisionTests { get; set; }
+
+        public ICollection<AdminPermission>? AdminsPermissions { get; set; }
+
+        public ICollection<AdminUserPermission>? AdminsUserPermissions { get; set; }
         
 
     }

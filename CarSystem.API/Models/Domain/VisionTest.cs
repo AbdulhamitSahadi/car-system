@@ -38,5 +38,9 @@ namespace CarSystem.API.Models.Domain
         [ForeignKey("Test")]
         public int TestId { get; set; }
         public Test Test { get; set; }
+
+        public int TakeTestId { get; set; }
+
+        public TakeTest TakeTest { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace CarSystem.API.Models.DTOs.UserDTOs.ReadDTOs.RenewalLicenseDTOs
 {
-    public class ReadRenewalLicensePermissionDto
+    public class ReadRenewalLicenseDto
     {
         public int Id { get; set; }
         public License License { get; set; }

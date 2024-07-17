@@ -45,11 +45,11 @@ namespace CarSystem.API.Models.Domain
 
 
         //Admin Role
-        public ICollection<DamageLicense>? DamageLicenses { get; set; }
-        public ICollection<License>? Licenses { get; set; }
-        public ICollection<LostLicense>? LostLicenses { get; set; }
-        public ICollection<RenewalLicense>? RenewalLicenses { get; set; }
-        public ICollection<WritingTest>? WritingTests { get; set; }
-        public ICollection<Test>? Tests { get; set; }
+        //public ICollection<DamageLicense>? DamageLicenses { get; set; }
+        //public ICollection<License>? Licenses { get; set; }
+        //public ICollection<LostLicense>? LostLicenses { get; set; }
+        //public ICollection<RenewalLicense>? RenewalLicenses { get; set; }
+        //public ICollection<WritingTest>? WritingTests { get; set; }
+        //public ICollection<Test>? Tests { get; set; }
     }
 }

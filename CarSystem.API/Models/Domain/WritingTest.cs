@@ -41,5 +41,9 @@ namespace CarSystem.API.Models.Domain
         public Test Test { get; set; }
 
         //public ICollection<Test> Tests { get; set; }
+
+        public int TakeTestId { get; set; }
+
+        public TakeTest TakeTest { get; set; }
     }
 }

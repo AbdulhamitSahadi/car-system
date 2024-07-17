@@ -2,7 +2,7 @@
 
 namespace CarSystem.API.Models.DTOs.UserDTOs.ReadDTOs.UserDTOs
 {
-    public class ReadUserPermissionDto
+    public class ReadUserDto
     {
         public int Id { get; set; }
 

@@ -11,7 +11,7 @@ namespace CarSystem.API.Models.Domain
         //public int Id { get; set; }
 
         [Required]
-        [ForeignKey(nameof(License))]
+        [ForeignKey("License")]
         public int LicenseId { get; set; }
         public License License { get; set; }
 

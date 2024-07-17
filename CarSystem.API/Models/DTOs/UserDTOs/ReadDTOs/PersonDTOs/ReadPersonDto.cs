@@ -3,7 +3,7 @@ using CarSystem.API.Models.Domain;
 
 namespace CarSystem.API.Models.DTOs.UserDTOs.ReadDTOs.PersonDTOs
 {
-    public class ReadPersonPermissionDto
+    public class ReadPersonDto
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

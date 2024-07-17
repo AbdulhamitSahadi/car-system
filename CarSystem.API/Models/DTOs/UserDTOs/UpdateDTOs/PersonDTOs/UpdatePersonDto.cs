@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CarSystem.API.Models.DTOs.UserDTOs.UpdateDTOs.PersonDTOs
 {
-    public class UpdatePersonPermissionDto
+    public class UpdatePersonDto
     {
         public int Id { get; set; }
 
