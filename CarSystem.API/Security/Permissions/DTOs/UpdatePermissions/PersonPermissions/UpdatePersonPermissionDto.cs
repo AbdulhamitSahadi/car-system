@@ -25,5 +25,7 @@ namespace CarSystem.API.Security.Permissions.DTOs.UpdatePermissions.PersonPermis
         public string? Address { get; set; }
 
         public int NationalityId { get; set; }
+
+        public Status Status { get; set; }
     }
 }

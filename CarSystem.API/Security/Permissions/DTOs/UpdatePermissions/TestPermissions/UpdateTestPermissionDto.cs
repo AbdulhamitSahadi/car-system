@@ -1,4 +1,6 @@
-﻿namespace CarSystem.API.Security.Permissions.DTOs.UpdatePermissions.TestPermissions
+﻿using CarSystem.API.Enums;
+
+namespace CarSystem.API.Security.Permissions.DTOs.UpdatePermissions.TestPermissions
 {
     public class UpdateTestPermissionDto
     {
@@ -15,5 +17,8 @@
 
 
         public bool IsCompleted { get; set; }
+
+        public Status Status { get; set; }
+
     }
 }

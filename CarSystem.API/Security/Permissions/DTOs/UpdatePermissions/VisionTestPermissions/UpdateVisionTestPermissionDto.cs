@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CarSystem.API.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace CarSystem.API.Security.Permissions.DTOs.UpdatePermissions.VisionTestPermissions
 {
@@ -15,5 +16,7 @@ namespace CarSystem.API.Security.Permissions.DTOs.UpdatePermissions.VisionTestPe
 
         [Required]
         public int TestId { get; set; }
+
+        public Status Status { get; set; }
     }
 }

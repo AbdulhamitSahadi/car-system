@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CarSystem.API.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace CarSystem.API.Security.Permissions.DTOs.UpdatePermissions.TestCategoryPermissions
 {
@@ -14,5 +15,7 @@ namespace CarSystem.API.Security.Permissions.DTOs.UpdatePermissions.TestCategory
 
         [Required]
         public int NumberOfQuestions { get; set; }
+
+        public Status Status { get; set; }
     }
 }

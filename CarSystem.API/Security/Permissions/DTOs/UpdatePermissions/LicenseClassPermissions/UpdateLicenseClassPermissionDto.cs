@@ -1,4 +1,6 @@
-﻿namespace CarSystem.API.Security.Permissions.DTOs.UpdatePermissions.LicenseClassPermissions
+﻿using CarSystem.API.Enums;
+
+namespace CarSystem.API.Security.Permissions.DTOs.UpdatePermissions.LicenseClassPermissions
 {
     public class UpdateLicenseClassPermissionDto
     {
@@ -14,5 +16,7 @@
 
 
         public string? Notes { get; set; }
+
+        public Status Status { get; set; }
     }
 }

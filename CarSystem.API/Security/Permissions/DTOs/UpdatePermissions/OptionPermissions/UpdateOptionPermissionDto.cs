@@ -1,4 +1,6 @@
-﻿namespace CarSystem.API.Security.Permissions.DTOs.UpdatePermissions.OptionPermissions
+﻿using CarSystem.API.Enums;
+
+namespace CarSystem.API.Security.Permissions.DTOs.UpdatePermissions.OptionPermissions
 {
     public class UpdateOptionPermissionDto
     {
@@ -7,5 +9,8 @@
         public bool IsCorrect { get; set; }
 
         public int QuestionId { get; set; }
+
+
+        public Status Status { get; set; }
     }
 }

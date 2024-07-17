@@ -1,4 +1,6 @@
-﻿namespace CarSystem.API.Security.Permissions.DTOs.UpdatePermissions.QuestionPermissions
+﻿using CarSystem.API.Enums;
+
+namespace CarSystem.API.Security.Permissions.DTOs.UpdatePermissions.QuestionPermissions
 {
     public class UpdateQuestionPermissionDto
     {
@@ -7,5 +9,7 @@
         public string Content { get; set; }
 
         public int TestCategoryId { get; set; }
+
+        public Status Status { get; set; }
     }
 }
